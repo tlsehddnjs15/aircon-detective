@@ -4,7 +4,7 @@ import { QUOTE_STATUS, T, db, guard, queryParam, readBody, send } from './_lib.j
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 const toClient = (r) => ({
   id: r.id, name: r.name, phone: r.phone, service: r.service, memo: r.memo,
-  area: r.area, aircon: r.aircon, status: r.status, smsSent: r.sms_sent, createdAt: r.created_at,
+  area: r.area, aircon: r.aircon, photos: Array.isArray(r.photos) ? r.photos : [], status: r.status, smsSent: r.sms_sent, createdAt: r.created_at,
 });
 
 export default async function handler(req, res) {

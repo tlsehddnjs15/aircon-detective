@@ -8,7 +8,7 @@
 // 저장과 문자 중 하나만 설정해도 동작합니다. 둘 다 실패하면 고객 화면에 문자 앱 열기 안내가 나옵니다.
 
 import crypto from 'node:crypto';
-import { T, clean, db, readBody, sameOrigin, send, supabaseReady } from './_lib.js';
+import { T, clean, db, readBody, sameOrigin, send, storagePathOf, supabaseReady } from './_lib.js';
 
 const PHONE_RE = /^01[016789]-?\d{3,4}-?\d{4}$/;
 
@@ -65,6 +65,9 @@ export default async function handler(req, res) {
   const area = clean(body.area, 80);
   const aircon = clean(body.aircon, 60);
   const memo = clean(body.memo, 600);
+  const photos = (Array.isArray(body.photos) ? body.photos : [])
+    .filter((u) => String(storagePathOf(u) || '').startsWith('acquotes/'))
+    .slice(0, 5);
 
   if (!name) return send(res, 400, { ok: false, error: 'name_required' });
   if (!PHONE_RE.test(phone)) return send(res, 400, { ok: false, error: 'phone_invalid' });
@@ -78,6 +81,8 @@ export default async function handler(req, res) {
     aircon && `에어컨: ${aircon}`,
     area && `지역: ${area}`,
     memo && `내용: ${memo}`,
+    photos.length && `사진 ${photos.length}장:`,
+    ...photos,
   ].filter(Boolean).join('\n');
 
   const smsSent = await sendSms(text);
@@ -85,7 +90,7 @@ export default async function handler(req, res) {
   let saved = false;
   if (supabaseReady()) {
     try {
-      await db('POST', T.quotes, { body: { name, phone, service, area, aircon, memo, sms_sent: smsSent }, prefer: 'return=minimal' });
+      await db('POST', T.quotes, { body: { name, phone, service, area, aircon, memo, photos, sms_sent: smsSent }, prefer: 'return=minimal' });
       saved = true;
     } catch (err) {
       console.error('quote save failed', err);
