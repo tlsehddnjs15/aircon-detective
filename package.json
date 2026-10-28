@@ -1,0 +1,6 @@
+{
+  "name": "aircon-detective",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" }
+}

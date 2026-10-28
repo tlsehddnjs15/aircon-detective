@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/cases/:id", "destination": "/api/page?id=:id" },
+    { "source": "/sitemap-cases.xml", "destination": "/api/sitemap" }
+  ]
+}

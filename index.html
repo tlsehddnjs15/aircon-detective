@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>에어컨탐정 | 대전·세종·충청권 에어컨 분해청소·수리·설치</title>
+<meta name="description" content="에어컨 냄새·고장, 원인부터 찾아냅니다. 대전·세종·충청권 에어컨 분해청소, 고장 진단·수리, 설치·이전설치. 24시간 상담 010-4748-3142">
+<meta property="og:type" content="website">
+<meta property="og:title" content="에어컨탐정 | 에어컨 분해청소·수리·설치">
+<meta property="og:description" content="에어컨 냄새·고장, 원인부터 찾아냅니다. 대전·세종·충청권 24시간 상담">
+<meta property="og:image" content="/img/hero-jail.jpg">
+<link rel="canonical" href="https://aircon-detective.vercel.app/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HVACBusiness","name":"에어컨탐정","telephone":"+82-10-4748-3142","areaServed":["대전","세종","충청"],"openingHours":"Mo-Su 00:00-23:59","address":{"@type":"PostalAddress","addressLocality":"대전 유성구","addressCountry":"KR"},"url":"https://aircon-detective.vercel.app/"}</script>
+<style>
+:root{
+  --paper:#F3EEE3; --paper-2:#EAE3D3; --card:#FFFDF7; --ink:#1E1B16; --ink-2:#2A2620; --ink-soft:#3F3A31;
+  --muted:#5E574B; --line:#CFC5B0; --red:#9E2019; --red-dark:#7A1812; --gold:#C9A86A; --sand:#D6CEBC; --sand-2:#B5AC98;
+  --f-serif:'Nanum Myeongjo',serif; --f-mono:'Nanum Gothic Coding',monospace; --f-sans:'Noto Sans KR',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-sans);line-height:1.65;font-size:16px;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--red)}a:hover{color:var(--red-dark)}
+img{max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+[hidden]{display:none!important}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.serif{font-family:var(--f-serif);font-weight:800}
+.mono{font-family:var(--f-mono)}
+.eyebrow{margin:0;font-family:var(--f-mono);font-size:14px;color:var(--red);font-weight:700;letter-spacing:.02em}
+.h2{margin:0;font-family:var(--f-serif);font-weight:800;font-size:clamp(30px,4vw,40px);line-height:1.3}
+.lead{margin:0;color:var(--ink-soft);font-size:17px}
+.sec{padding:clamp(56px,8vw,80px) 0}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
+.alt{background:var(--paper-2)}
+.dark{background:var(--ink);color:var(--paper)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border:2px solid transparent;font-weight:700;text-decoration:none;cursor:pointer;background:none;border-radius:0;font-size:16px;white-space:nowrap}
+.btn-red{background:var(--red);color:#fff;border-color:var(--red)}.btn-red:hover{background:var(--red-dark);border-color:var(--red-dark);color:#fff}
+.btn-ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}.btn-ink:hover{background:#000;color:#fff}
+.btn-line{border-color:var(--ink);color:var(--ink)}.btn-line:hover{background:var(--ink);color:var(--paper)}
+.btn-light{background:var(--card);color:var(--ink);border-color:var(--card)}.btn-light:hover{color:var(--red)}
+.btn-lg{min-height:54px;padding:0 30px;font-size:17px}
+.btn-sm{min-height:44px;padding:0 16px;font-size:15px}
+.btn[disabled]{opacity:.55;cursor:default}
+.ic{width:20px;height:20px;flex:none}
+
+/* header */
+.top{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:2px solid var(--ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:42px;height:42px;border:2px solid var(--red);display:flex;align-items:center;justify-content:center;flex:none}
+.logo-txt{display:flex;flex-direction:column;line-height:1.15}
+.logo-txt b{font-family:var(--f-serif);font-weight:800;font-size:26px}
+.logo-txt small{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.nav{display:flex;gap:4px 22px;font-size:15px}
+.nav a{color:var(--ink);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover,.nav a[aria-current="page"]{border-bottom-color:var(--red)}
+@media (max-width:960px){
+  .top .wrap{flex-wrap:wrap;gap:10px}
+  .nav{order:3;width:100%;overflow-x:auto;gap:18px;padding-bottom:2px;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{white-space:nowrap}
+  .top .btn{min-height:40px;padding:0 14px;font-size:14px}
+  .logo-txt b{font-size:22px}
+}
+
+/* hero */
+.hero .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:center;padding-top:clamp(40px,7vw,72px);padding-bottom:clamp(40px,7vw,72px)}
+.hero-copy{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.hero h1{margin:0;font-family:var(--f-serif);font-weight:800;font-size:clamp(38px,5.4vw,60px);line-height:1.2;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero-sub{margin:0;font-size:18px;color:var(--ink-soft);max-width:520px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.checks{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:15px;color:var(--ink-soft);margin:0;padding:0;list-style:none}
+.checks li{display:flex;align-items:center;gap:8px}
+.hero-img{flex:1 1 420px;min-width:0;display:flex;justify-content:center;align-items:center}
+.hero-img img{display:block;width:100%;max-width:560px;height:auto;align-self:center;box-shadow:0 14px 30px rgba(30,27,22,.25)}
+
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.svc{background:var(--paper);border:1px solid var(--line);padding:30px;display:flex;flex-direction:column;gap:14px}
+.svc-ic{width:54px;height:54px;border:2px solid var(--red);display:flex;align-items:center;justify-content:center}
+.svc h3{margin:0;font-family:var(--f-serif);font-weight:800;font-size:26px}
+.svc p{margin:0;color:var(--ink-soft)}
+.svc ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.svc .btn{margin-top:auto}
+.case-card{background:var(--ink-2);border-top:6px solid var(--gold);padding:28px;display:flex;flex-direction:column;gap:12px}
+.case-card .no{font-family:var(--f-mono);font-size:14px;color:var(--gold)}
+.case-card h3{margin:0;font-family:var(--f-serif);font-weight:800;font-size:26px;color:#fff}
+.case-card p{margin:0;color:var(--sand)}
+.case-card small{color:var(--sand-2);font-size:15px}
+
+/* clue */
+.clue{display:flex;flex-wrap:wrap;gap:28px}
+.clue-list{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.clue-btn{display:flex;align-items:center;gap:14px;width:100%;min-height:64px;padding:0 20px;cursor:pointer;text-align:left;background:var(--card);color:var(--ink);border:2px solid var(--line)}
+.clue-btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.clue-btn .n{font-family:var(--f-mono);font-size:13px;opacity:.8}
+.clue-btn b{flex:1;font-size:18px}
+.clue-out{flex:1 1 420px;min-width:0;background:var(--ink);color:var(--paper);padding:36px;display:flex;flex-direction:column;gap:18px}
+.clue-out .tag{display:flex;align-items:center;gap:10px;color:var(--gold);font-family:var(--f-mono);font-weight:700}
+.clue-out h3{margin:0;font-family:var(--f-serif);font-weight:800;font-size:30px}
+.clue-out p{margin:0;color:var(--sand);font-size:17px}
+.clue-fix{display:flex;flex-direction:column;gap:4px;padding:18px;background:var(--ink-2);border-left:4px solid var(--gold)}
+.clue-fix span{font-size:14px;color:var(--sand-2)}
+.clue-fix b{font-size:19px;color:#fff}
+
+/* process */
+.steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));border-top:2px solid var(--ink)}
+.steps li{padding:24px 20px 24px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.steps .s{font-family:var(--f-mono);color:var(--red);font-weight:700}
+.steps b{font-size:20px}
+.steps span:last-child{color:var(--ink-soft)}
+
+/* tabs & posts */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:24px}
+.tab{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 18px;cursor:pointer;font-size:16px;font-weight:700;background:var(--card);color:var(--ink);border:2px solid var(--line)}
+.tab[aria-selected="true"]{background:var(--red);color:#fff;border-color:var(--red)}
+.tab small{font-family:var(--f-mono);font-size:13px;opacity:.75}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.post-card{background:var(--card);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:10px;color:var(--ink);text-decoration:none}
+.post-card:hover{border-color:var(--ink);color:var(--ink)}
+.post-cover{aspect-ratio:4/3;background:#E6DFCF center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:var(--f-serif)}
+.post-meta{display:flex;justify-content:space-between;gap:8px;font-family:var(--f-mono);font-size:13px}
+.post-meta .c{color:var(--red);font-weight:700}.post-meta .d{color:var(--muted)}
+.post-card h3{margin:0;font-size:18px;line-height:1.4}
+.post-card p{margin:0;color:var(--ink-soft);font-size:15px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{grid-column:1/-1;padding:48px 24px;text-align:center;border:1px dashed var(--line);background:var(--card);color:var(--ink-soft)}
+.head-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px}
+
+/* faq */
+.faq{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.faq-list{flex:2 1 560px;min-width:0;border-top:2px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line);padding:20px 0}
+.faq summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .q{font-family:var(--f-mono);color:var(--red);margin-right:10px}
+.faq details p{margin:12px 0 0;color:var(--ink-soft)}
+
+/* cta / footer */
+.cta{background:var(--red);color:#fff}
+.cta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding-top:56px;padding-bottom:56px}
+.cta h2{margin:0;font-family:var(--f-serif);font-weight:800;font-size:clamp(26px,3.4vw,34px)}
+.cta p{margin:6px 0 0;color:#F5D9D6}
+.cta .btn-line{border-color:#fff;color:#fff}.cta .btn-line:hover{background:#fff;color:var(--ink)}
+footer{padding:36px 0 96px;font-size:14px;color:var(--muted);text-align:center;font-family:var(--f-mono)}
+footer a{color:var(--muted)}
+
+/* floating call */
+.fab{position:fixed;right:16px;bottom:16px;z-index:40;display:flex;flex-direction:column;gap:10px}
+.fab a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.fab .call{background:var(--red)}
+.fab .kakao{background:#FEE500}
+
+/* page head */
+.page-head{border-bottom:2px solid var(--ink)}
+.page-head .wrap{padding-top:48px;padding-bottom:32px;display:flex;flex-direction:column;gap:10px}
+.crumb{font-size:14px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.crumb a{color:var(--muted);text-decoration:none}.crumb a:hover{color:var(--red)}
+
+/* post */
+.post{max-width:760px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;gap:24px;font-size:18px;line-height:1.85}
+.post-top{display:flex;flex-direction:column;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:24px}
+.post-top .info{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:var(--f-mono);font-size:14px}
+.badge{padding:2px 12px;background:var(--red);color:#fff;font-weight:700}
+.post-top h1{margin:0;font-family:var(--f-serif);font-weight:800;font-size:clamp(28px,4vw,38px);line-height:1.35}
+.prose{display:flex;flex-direction:column;gap:22px}
+.prose p{margin:0}
+.prose h2{margin:12px 0 0;font-family:var(--f-serif);font-weight:800;font-size:26px;line-height:1.4}
+.prose figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.prose figure img{width:100%;height:auto;display:block;background:#E6DFCF}
+.prose figcaption{font-size:inherit;line-height:inherit}
+.prose blockquote{margin:0;padding:20px 24px;border-left:5px solid var(--red);background:var(--card)}
+.post-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:24px;background:var(--ink);color:var(--paper)}
+.post-cta b{font-family:var(--f-serif);font-size:22px}
+.more{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:24px;font-size:16px}
+.more h2{margin:0;font-size:18px}
+.more a{color:var(--ink)}
+.owner-bar{display:flex;gap:10px;flex-wrap:wrap}
+
+/* forms */
+.form{max-width:820px;margin:0 auto;padding:40px 24px 88px;display:flex;flex-direction:column;gap:24px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label,.lbl{font-weight:700}
+.field label i{color:var(--red);font-style:normal}
+.field input[type=text],.field input[type=tel],.field input[type=password],.field select,.field textarea{min-height:52px;padding:10px 16px;border:1.5px solid var(--line);background:var(--card);font-size:17px;border-radius:0;width:100%}
+.field textarea{min-height:120px;resize:vertical}
+.help{font-size:14px;color:var(--muted)}
+.pick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:560px){.pick{grid-template-columns:1fr}}
+.pick button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:72px;padding:12px 16px;cursor:pointer;text-align:left;background:var(--card);color:var(--ink);border:2px solid var(--line)}
+.pick button[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--red)}
+.pick b{font-size:18px}.pick small{font-size:13px;opacity:.85}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.agree input{width:22px;height:22px;margin-top:2px;flex:none;accent-color:var(--red)}
+.policy{font-size:14px;color:var(--ink-soft);background:var(--card);border:1px solid var(--line);padding:16px}
+.err{margin:0;color:var(--red);font-weight:700}
+.done{padding:40px 24px;text-align:center;background:var(--card);border:2px solid var(--ink);display:flex;flex-direction:column;gap:12px;align-items:center}
+.done h2{margin:0;font-family:var(--f-serif);font-size:28px}
+.hp{position:absolute;left:-9999px}
+
+/* editor */
+.ed-blocks{display:flex;flex-direction:column;gap:14px}
+.ed-block{background:var(--card);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:10px}
+.ed-block-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ed-block-head b{font-family:var(--f-mono);font-size:13px;color:var(--red)}
+.ed-tools{display:flex;gap:6px}
+.ed-tools button{min-width:44px;min-height:44px;border:1px solid var(--line);background:var(--paper);cursor:pointer}
+.ed-tools button[disabled]{opacity:.35;cursor:default}
+.ed-block textarea,.ed-block input[type=text]{padding:10px 12px;border:1px solid var(--line);background:var(--paper);font-size:16px;width:100%;border-radius:0}
+.ed-block textarea{min-height:110px;resize:vertical}
+.ed-img{display:flex;flex-direction:column;gap:10px}
+.ed-img img{max-height:340px;object-fit:contain;background:#E6DFCF;width:100%}
+.ed-up{position:relative}.ed-up span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(30,27,22,.55);color:#fff;font-weight:700}
+.ed-add{display:flex;flex-wrap:wrap;gap:8px;padding:14px;border:1px dashed var(--line);justify-content:center}
+.ed-cover{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.ed-thumb{width:120px;height:90px;background:#E6DFCF center/cover}
+.ed-actions{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:2px solid var(--ink);padding-top:22px}
+.ed-actions>div{display:flex;gap:10px;flex-wrap:wrap}
+.ed-dragging{outline:3px dashed var(--red);outline-offset:-6px}
+.btn-danger{border-color:var(--red);color:var(--red)}.btn-danger.armed{background:var(--red);color:#fff}
+.link{background:none;border:0;color:var(--red);text-decoration:underline;cursor:pointer;min-height:44px}
+
+/* admin */
+.adm{max-width:1200px;margin:0 auto;padding:40px 24px 88px;display:flex;flex-direction:column;gap:24px}
+.login{max-width:420px;display:flex;flex-direction:column;gap:16px;background:var(--card);border:1px solid var(--line);padding:28px}
+.login h2{margin:0;font-family:var(--f-serif)}
+.adm-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.adm-bar>div{display:flex;gap:10px;flex-wrap:wrap}
+.adm-sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.adm-sum div{background:var(--card);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column}
+.adm-sum span{font-size:14px;color:var(--muted)}.adm-sum strong{font-size:28px}
+.scroll-x{overflow-x:auto;border:1px solid var(--line);background:var(--card)}
+.adm-table{width:100%;border-collapse:collapse;min-width:900px;font-size:15px}
+.adm-table th,.adm-table td{padding:12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.adm-table th{background:var(--paper-2);font-weight:700;white-space:nowrap}
+.adm-table small{display:block;color:var(--muted)}
+.adm-table select{min-height:40px;border:1px solid var(--line);background:var(--paper)}
+.adm-table .memo{max-width:320px;white-space:pre-wrap}
+.adm-table .del{min-height:40px;padding:0 12px;border:1px solid var(--line);background:var(--paper);cursor:pointer}
+.adm-table .del.armed{background:var(--red);color:#fff;border-color:var(--red)}
+.flag{display:inline-block;margin-top:4px;font-size:12px;color:var(--red)}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;background:var(--ink);color:#fff;padding:12px 20px;font-size:15px;max-width:calc(100% - 32px)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home" data-go="home" aria-label="에어컨탐정 홈">
+      <span class="logo-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></span>
+      <span class="logo-txt"><b>에어컨탐정</b><small>분해청소 · 수리 · 설치</small></span>
+    </a>
+    <nav class="nav" aria-label="주 메뉴">
+      <a href="#service" data-go="home" data-scroll="service">서비스</a>
+      <a href="#clue" data-go="home" data-scroll="clue">증상 추리</a>
+      <a href="#cases" data-go="cases">사건 기록</a>
+      <a href="#faq" data-go="home" data-scroll="faq">탐문 기록</a>
+      <a href="#quote" data-go="quote">견적 의뢰</a>
+    </nav>
+    <a class="btn btn-ink btn-sm" href="tel:01047483142">사건 의뢰 010-4748-3142</a>
+  </div>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<section data-view="home">
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow" style="color:var(--muted);font-weight:400">CASE NO. 2026 · 대전 · 세종 · 충청권 출동</p>
+        <h1>에어컨 냄새 · 고장,<br><em>원인</em>부터 찾아냅니다.</h1>
+        <p class="hero-sub">냄새, 물 떨어짐, 시원하지 않은 바람. 증상을 단서 삼아 원인을 찾고, 분해청소 · 수리 · 설치 중 꼭 필요한 작업만 제안합니다.</p>
+        <div class="btns">
+          <a class="btn btn-red btn-lg" href="tel:01047483142">전화로 사건 의뢰</a>
+          <a class="btn btn-line btn-lg" href="#quote" data-go="quote">견적 의뢰서 쓰기</a>
+        </div>
+        <ul class="checks">
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>방문 전 증상 상담 무료</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>작업 전 견적 확정</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>24시간 상담</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>전후 사진 보고</li>
+        </ul>
+      </div>
+      <div class="hero-img"><img src="/img/hero-jail.jpg" width="1444" height="1089" alt="철창 안에서 고압 세척기와 전동 드릴을 든 에어컨탐정 캐릭터와 검거 완료 표지"></div>
+    </div>
+  </div>
+
+  <section id="service" class="sec" style="background:var(--card);border-top:2px solid var(--ink)">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">SERVICE</p><h2 class="h2">에어컨 일, 한 번에 맡기세요</h2><p class="lead">분해청소부터 고장 수리, 설치까지 한 업체가 처음부터 끝까지 책임집니다.</p></div>
+      <div class="grid3">
+        <article class="svc">
+          <span class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7c-3 3.6-6 7-6 10.3a6 6 0 0 0 12 0c0-3.3-3-6.7-6-10.3z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></span>
+          <h3>완전 분해청소</h3>
+          <p>송풍팬, 열교환기, 드레인 판까지 분해해서 고압 세척합니다. 곰팡이 냄새의 원인을 뿌리째 없앱니다.</p>
+          <ul><li>벽걸이 · 스탠드 · 천장형 · 실외기</li><li>친환경 세제 사용</li><li>작업 전후 사진 전달</li></ul>
+          <a class="btn btn-red" href="#quote-clean" data-go="quote-clean">분해청소 견적 의뢰 <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="svc">
+          <span class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L22 13.6 13.6 22l-2.3-2.3a4 4 0 0 0-5-5L2 10.4 10.4 2z"/><path d="m7 7 10 10"/></svg></span>
+          <h3>고장 진단 · 수리</h3>
+          <p>시원하지 않거나, 물이 새거나, 에러 코드가 뜰 때 원인을 찾아 고칩니다. 고칠 수 없는 경우엔 솔직하게 말씀드립니다.</p>
+          <ul><li>냉매(가스) 누설 점검 · 충전</li><li>배수 막힘 · 물 떨어짐</li><li>에러 코드 · 소음 · 전원 불량</li></ul>
+          <a class="btn btn-red" href="#quote-repair" data-go="quote-repair">수리 견적 의뢰 <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="svc">
+          <span class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="9" rx="2"/><path d="M6 9h12"/><path d="M7 17v3M12 17v3M17 17v3"/></svg></span>
+          <h3>설치 · 이전설치</h3>
+          <p>새 에어컨 설치, 이사할 때 떼고 다시 다는 이전설치, 배관 연장과 매립 배관 작업까지 합니다.</p>
+          <ul><li>벽걸이 · 스탠드 · 시스템 에어컨</li><li>이전설치, 배관 연장</li><li>실외기 앵글 · 난간 설치</li></ul>
+          <a class="btn btn-red" href="#quote-install" data-go="quote-install">설치 견적 의뢰 <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="clue" class="sec alt">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">CLUE CHECK</p><h2 class="h2">어떤 증상이 있나요?</h2><p class="lead">증상을 누르면 탐정의 추리를 보여 드립니다.</p></div>
+      <div class="clue">
+        <div class="clue-list" id="clueList"></div>
+        <div class="clue-out" aria-live="polite">
+          <span class="tag"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>탐정의 추리</span>
+          <h3 id="clueTitle"></h3>
+          <p id="clueCause"></p>
+          <div class="clue-fix"><span>해결 방법</span><b id="clueFix"></b></div>
+          <a class="btn btn-red" style="align-self:flex-start" id="clueGo" href="#quote" data-go="quote">이 증상으로 의뢰하기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="h2">담당 사건</h2></div>
+      <div class="grid3">
+        <article class="case-card"><span class="no">사건 01 · 분해청소</span><h3>냄새의 정체</h3><p>범인은 송풍팬과 열교환기 속 곰팡이. 완전 분해 후 고압 세척으로 뿌리째 제거합니다.</p><small>벽걸이 · 스탠드 · 천장형 · 실외기</small></article>
+        <article class="case-card"><span class="no">사건 02 · 진단 · 수리</span><h3>사라진 찬바람</h3><p>냉매 누설, 막힌 배수, 에러 코드, 소음. 하나씩 확인해서 진짜 원인을 찾아 고칩니다.</p><small>냉매 충전 · 배수 · 부품 교체</small></article>
+        <article class="case-card"><span class="no">사건 03 · 설치</span><h3>새집으로의 이사</h3><p>떼어 내고, 옮기고, 다시 단다. 배관 길이와 실외기 위치까지 꼼꼼하게 맞춥니다.</p><small>신규 · 이전설치 · 배관 연장</small></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="h2">수사 방식</h2></div>
+      <ol class="steps">
+        <li><span class="s">STEP 1</span><b>사건 접수</b><span>증상과 사진을 전화나 견적 의뢰서로 받습니다.</span></li>
+        <li><span class="s">STEP 2</span><b>현장 조사</b><span>방문해서 원인을 확인하고 설명드립니다.</span></li>
+        <li><span class="s">STEP 3</span><b>견적 확정</b><span>작업 전에 금액을 확정하고 동의 후 시작합니다.</span></li>
+        <li><span class="s">STEP 4</span><b>사건 종결 보고</b><span>전후 사진과 작동 확인으로 마무리합니다.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="records" class="sec alt">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="sec-head" style="margin:0"><p class="eyebrow">CASE RECORDS</p><h2 class="h2">사건 기록</h2><p class="lead">실제 현장의 작업 과정을 사진과 함께 기록합니다.</p></div>
+        <div class="btns"><a class="btn btn-ink btn-sm owner-only" hidden href="#write" data-go="write">기록 쓰기 (관리자)</a><a class="btn btn-line btn-sm" href="#cases" data-go="cases">전체 기록 보기</a></div>
+      </div>
+      <div class="tabs" role="tablist" aria-label="사건 기록 분류" data-tabs="home"></div>
+      <div class="posts" id="homePosts"></div>
+    </div>
+  </section>
+
+  <section id="faq" class="sec">
+    <div class="wrap faq">
+      <div style="flex:1 1 320px;min-width:0" class="sec-head"><p class="eyebrow">Q&amp;A FILE</p><h2 class="h2">탐문 기록</h2><p class="lead">의뢰인들이 가장 많이 묻는 질문을 모았습니다.</p></div>
+      <div class="faq-list">
+        <details><summary><span class="q">Q1</span>분해청소는 얼마나 자주 해야 하나요?</summary><p>가정은 1년에 한 번, 여름 시작 전에 하시는 걸 권해 드립니다. 상가나 사무실처럼 오래 켜 두는 곳은 6개월에 한 번이 좋습니다.</p></details>
+        <details><summary><span class="q">Q2</span>작업 시간은 얼마나 걸리나요?</summary><p>에어컨 종류와 오염 정도에 따라 다릅니다. 예약하실 때 예상 시간을 함께 안내해 드립니다. 수리는 원인에 따라 달라서 진단 후 안내드립니다.</p></details>
+        <details><summary><span class="q">Q3</span>방문 전에 비용을 알 수 있나요?</summary><p>에어컨 모델명 스티커와 증상 사진을 보내 주시면 예상 비용을 먼저 알려 드립니다. 현장에서 확정한 금액 외에 추가 요금은 받지 않습니다.</p></details>
+        <details><summary><span class="q">Q4</span>고칠 수 없는 고장이면 어떻게 되나요?</summary><p>수리보다 교체가 나은 경우엔 솔직하게 말씀드립니다. 필요하시면 새 에어컨 설치까지 이어서 도와드립니다.</p></details>
+        <details><summary><span class="q">Q5</span>어느 지역까지 오시나요?</summary><p>대전, 세종, 충청권 전 지역을 방문합니다. 거리가 먼 곳은 일정을 미리 맞춰 드립니다.</p></details>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ CASES ============ -->
+<section data-view="cases" hidden>
+  <div class="page-head"><div class="wrap">
+    <div class="crumb"><a href="#home" data-go="home">홈</a><span>/</span><span>사건 기록</span></div>
+    <div class="head-row" style="margin:0">
+      <div class="sec-head" style="margin:0"><p class="eyebrow">CASE RECORDS</p><h1 class="h2" style="font-size:clamp(34px,4.6vw,46px)">사건 기록</h1><p class="lead">분해청소, 수리, 설치 현장을 분류별로 모아 봅니다.</p></div>
+      <a class="btn btn-ink btn-sm owner-only" hidden href="#write" data-go="write">기록 쓰기 (관리자)</a>
+    </div>
+  </div></div>
+  <div class="sec" style="padding-top:32px"><div class="wrap">
+    <div class="tabs" role="tablist" aria-label="사건 기록 분류" data-tabs="list"></div>
+    <div class="posts" id="allPosts"></div>
+  </div></div>
+</section>
+
+<!-- ============ POST ============ -->
+<section data-view="post" hidden><div id="postView"></div></section>
+
+<!-- ============ WRITE ============ -->
+<section data-view="write" hidden>
+  <div class="page-head"><div class="wrap">
+    <div class="crumb"><a href="#home" data-go="home">홈</a><span>/</span><a href="#cases" data-go="cases">사건 기록</a><span>/</span><span id="writeCrumb">새 기록</span></div>
+    <h1 class="h2" id="writeTitle">새 사건 기록 쓰기</h1>
+  </div></div>
+  <div id="writeBody" class="form"></div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section data-view="quote" hidden>
+  <div class="page-head"><div class="wrap">
+    <div class="crumb"><a href="#home" data-go="home">홈</a><span>/</span><span>견적 의뢰</span></div>
+    <p class="eyebrow">REQUEST</p>
+    <h1 class="h2">견적 의뢰서</h1>
+    <p class="lead">남겨 주시면 확인하는 대로 바로 연락드립니다. 급하시면 <a href="tel:01047483142">010-4748-3142</a>로 전화 주세요. 24시간 상담합니다.</p>
+  </div></div>
+  <div class="form" id="quoteWrap">
+    <form id="quoteForm" novalidate style="display:flex;flex-direction:column;gap:24px">
+      <fieldset style="margin:0;padding:0;border:0" class="field">
+        <legend class="lbl" style="margin-bottom:10px">어떤 작업이 필요하세요? <i style="color:var(--red);font-style:normal">*</i></legend>
+        <div class="pick" id="qPick">
+          <button type="button" data-svc="clean" aria-pressed="false"><b>분해청소</b><small>냄새 · 곰팡이 · 정기 세척</small></button>
+          <button type="button" data-svc="repair" aria-pressed="false"><b>수리</b><small>냉방 불량 · 누수 · 에러</small></button>
+          <button type="button" data-svc="install" aria-pressed="false"><b>설치</b><small>신규 · 이전설치 · 배관</small></button>
+        </div>
+      </fieldset>
+      <div class="field"><label for="qAircon">에어컨 종류</label>
+        <select id="qAircon"><option value="">선택해 주세요</option><option>벽걸이</option><option>스탠드</option><option>2in1 (벽걸이 + 스탠드)</option><option>천장형 (시스템)</option><option>실외기</option><option>잘 모르겠어요</option></select></div>
+      <div class="field"><label for="qArea">지역 <span class="help" style="font-weight:400">(동까지 적어 주시면 좋아요)</span></label><input id="qArea" type="text" autocomplete="address-level2" placeholder="예) 대전 유성구 봉명동"></div>
+      <div class="field"><label for="qName">성함 <i>*</i></label><input id="qName" type="text" autocomplete="name" maxlength="30"></div>
+      <div class="field"><label for="qPhone">연락처 <i>*</i></label><input id="qPhone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" maxlength="13"></div>
+      <div class="field"><label for="qMemo">증상이나 요청사항</label><textarea id="qMemo" maxlength="600" placeholder="예) 켤 때마다 냄새가 나요. 스탠드 1대, 이번 주말 가능할까요?"></textarea>
+        <span class="help">에어컨 사진이나 모델명 스티커 사진이 있으면 상담 전화 때 문자로 보내 주세요. 더 정확한 견적을 드릴 수 있어요.</span></div>
+      <input class="hp" type="text" id="qWeb" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field">
+        <label class="agree"><input type="checkbox" id="qAgree"><span>개인정보 수집 · 이용에 동의합니다. <button type="button" class="link" id="qPolicyBtn" style="min-height:auto;padding:0">내용 보기</button></span></label>
+        <div class="policy" id="qPolicy" hidden>수집 항목: 성함, 연락처, 지역, 요청 내용 · 이용 목적: 견적 안내와 작업 일정 연락 · 보관 기간: 상담 종료 후 1년 뒤 파기. 동의하지 않으실 수 있으며, 이 경우 전화(010-4748-3142)로 상담해 주세요.</div>
+      </div>
+      <p class="err" id="qErr" hidden></p>
+      <button type="submit" class="btn btn-red btn-lg" id="qBtn">견적 의뢰 보내기</button>
+    </form>
+    <div class="done" id="qDone" hidden>
+      <h2>의뢰서를 받았습니다</h2>
+      <p style="margin:0">확인하는 대로 바로 연락드리겠습니다. 급하시면 지금 전화 주세요.</p>
+      <a class="btn btn-red" href="tel:01047483142">010-4748-3142 전화하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ADMIN ============ -->
+<section data-view="admin" hidden>
+  <div class="page-head"><div class="wrap"><div class="crumb"><a href="#home" data-go="home">홈</a><span>/</span><span>관리</span></div><h1 class="h2">관리</h1></div></div>
+  <div class="adm" id="adminBody"></div>
+</section>
+</main>
+
+<section class="cta">
+  <div class="wrap">
+    <div><h2>미해결 사건, 지금 의뢰하세요</h2><p>모델명 스티커와 증상 사진을 보내 주시면 방문 전에 예상 비용을 알려 드립니다.</p></div>
+    <div class="btns"><a class="btn btn-light btn-lg" href="tel:01047483142">010-4748-3142</a><a class="btn btn-line btn-lg" href="#quote" data-go="quote">견적 의뢰서 쓰기</a></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">에어컨탐정 · 대표 신동원 · 사업자등록번호 502-39-52251 · 대전 유성구 · 운영 24시간 · <a href="tel:01047483142">010-4748-3142</a><br><a href="#admin" data-go="admin">관리자</a></div>
+</footer>
+
+<div class="fab" id="fab">
+  <a class="kakao" id="fabKakao" hidden href="#" target="_blank" rel="noopener" aria-label="카카오톡 상담"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#191919" d="M12 3C6.5 3 2 6.6 2 11c0 2.9 1.9 5.4 4.8 6.8l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.4.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg></a>
+  <a class="call" href="tel:01047483142" aria-label="전화 상담 010-4748-3142"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+document.getElementById('ssrPost')?.remove();
+/* 카카오톡 채널(또는 오픈채팅) 주소가 생기면 여기에 넣으세요. 비워 두면 카톡 버튼이 숨겨집니다. */
+const KAKAO_URL = '';
+const PHONE = '01047483142';
+
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const textHtml=t=>esc(t).replace(/\n/g,'<br>');
+function toast(msg){ const t=$('#toast'); t.textContent=msg; t.hidden=false; clearTimeout(toast._t); toast._t=setTimeout(()=>t.hidden=true,2600); }
+if(KAKAO_URL){ const k=$('#fabKakao'); k.href=KAKAO_URL; k.hidden=false; }
+
+const CATS=[{id:'clean',name:'분해청소',sub:'벽걸이 · 스탠드 · 천장형',hint:'예) 봉명동 아파트, 곰팡이 냄새 나던 스탠드 에어컨 분해청소'},
+  {id:'repair',name:'수리',sub:'냉방 불량 · 누수 · 에러',hint:'예) 도안동 사무실, 물 떨어지던 벽걸이 배수 막힘 수리'},
+  {id:'install',name:'설치',sub:'신규 · 이전설치 · 배관',hint:'예) 노은동 이사 후 스탠드 에어컨 이전설치'}];
+const catById=id=>CATS.find(c=>c.id===id);
+
+/* ---------- backend ---------- */
+async function api(path,{method='GET',body}={}){
+  const r=await fetch('/api/'+path,{method,credentials:'same-origin',headers:body?{'Content-Type':'application/json'}:{},body:body?JSON.stringify(body):undefined});
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok||j.ok===false){ const e=new Error(j.error||('http_'+r.status)); e.code=j.error||('http_'+r.status); e.status=r.status; throw e; }
+  return j;
+}
+const isRef=r=>typeof r==='string'&&/^https?:\/\/[^\s"'()<>\\]+$/.test(r);
+async function shrinkImage(file){
+  const MAX=2000;
+  try{
+    if(!/^image\/(jpeg|png|webp|heic|heif)$/.test(file.type)&&file.type) return file;
+    const bmp=await createImageBitmap(file);
+    const scale=Math.min(1,MAX/Math.max(bmp.width,bmp.height));
+    if(scale===1&&file.size<2.5*1024*1024&&/^image\/(jpeg|png|webp)$/.test(file.type)) return file;
+    const c=document.createElement('canvas'); c.width=Math.round(bmp.width*scale); c.height=Math.round(bmp.height*scale);
+    c.getContext('2d').drawImage(bmp,0,0,c.width,c.height);
+    const blob=await new Promise(res=>c.toBlob(res,'image/jpeg',0.86));
+    return blob?new File([blob],(file.name||'photo').replace(/\.\w+$/,'')+'.jpg',{type:'image/jpeg'}):file;
+  }catch(_){ return file; }
+}
+async function upload(file){
+  const f=await shrinkImage(file);
+  if(f.size>10*1024*1024){ const e=new Error('too_large'); e.code='too_large'; throw e; }
+  const j=await api('upload',{method:'POST',body:{type:f.type}});
+  const fd=new FormData(); fd.append('cacheControl','31536000'); fd.append('',f);
+  const r=await fetch(j.uploadUrl,{method:'PUT',body:fd,headers:{'x-upsert':'false'}});
+  if(!r.ok){ const e=new Error('upload_failed'); e.code='upload_failed'; throw e; }
+  return j.publicUrl;
+}
+const upErr=err=>err?.code==='too_large'?'10MB보다 큰 사진은 올릴 수 없습니다':err?.code==='login_required'?'관리자 로그인이 필요합니다':'사진을 올리지 못했습니다. 다시 시도해 주세요';
+
+/* ---------- clue ---------- */
+const CLUES=[
+ {label:'켜면 퀴퀴한 냄새가 나요',cause:'송풍팬과 열교환기 안쪽에 곰팡이와 먼지가 쌓였을 가능성이 큽니다. 필터만 닦아서는 냄새가 빠지지 않습니다.',fix:'완전 분해청소',svc:'clean'},
+ {label:'실내기에서 물이 떨어져요',cause:'배수 호스가 막혔거나 드레인 판에 오염이 쌓여 물이 넘치는 경우가 많습니다. 설치 기울기 문제일 수도 있습니다.',fix:'배수 점검 · 분해청소',svc:'repair'},
+ {label:'바람이 시원하지 않아요',cause:'냉매(가스)가 새고 있거나, 열교환기와 실외기가 막혀 열을 제대로 빼지 못하는 상태일 수 있습니다.',fix:'냉매 누설 점검 · 충전, 실외기 세척',svc:'repair'},
+ {label:'덜덜거리는 소음이 나요',cause:'팬에 이물질이 붙어 균형이 깨졌거나, 실외기 고정이 풀렸을 수 있습니다.',fix:'팬 점검 · 실외기 고정',svc:'repair'},
+ {label:'에러 코드가 떠요',cause:'제조사와 코드 번호에 따라 원인이 다릅니다. 화면에 뜬 코드를 사진으로 찍어 두셨다가 상담 때 알려 주세요.',fix:'고장 진단 · 수리',svc:'repair'}];
+let clueAt=0;
+function renderClue(){
+  $('#clueList').innerHTML=CLUES.map((c,i)=>`<button type="button" class="clue-btn" data-clue="${i}" aria-pressed="${i===clueAt}"><span class="n">단서 0${i+1}</span><b>${esc(c.label)}</b><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>`).join('');
+  const c=CLUES[clueAt]; $('#clueTitle').textContent=c.label; $('#clueCause').textContent=c.cause; $('#clueFix').textContent=c.fix;
+  const g=$('#clueGo'); g.dataset.go='quote-'+c.svc; g.href='#quote-'+c.svc; g.dataset.memo=c.label;
+}
+$('#clueList').addEventListener('click',e=>{ const b=e.target.closest('[data-clue]'); if(!b) return; clueAt=+b.dataset.clue; renderClue(); });
+
+/* ---------- posts ---------- */
+let POSTS=[], postsState='loading', homeTab='all', listTab='all', currentPost=null, OWNER=false;
+const fmtDate=d=>{ try{ const x=new Date(d); return `${x.getFullYear()}.${String(x.getMonth()+1).padStart(2,'0')}.${String(x.getDate()).padStart(2,'0')}`; }catch(_){ return ''; } };
+const excerptOf=p=>p.excerpt?.trim()||((p.blocks||[]).find(b=>b.t==='p'&&b.text)?.text||'').slice(0,110);
+const postHref=id=>'/cases/'+encodeURIComponent(id);
+async function loadPosts(){
+  try{ const j=await api('posts'); POSTS=(j.posts||[]).filter(p=>p.title).sort((a,b)=>String(b.createdAt||'').localeCompare(String(a.createdAt||''))); postsState='ready'; }
+  catch(_){ postsState='unavailable'; }
+  renderAllPosts();
+}
+function tabsHtml(cur){
+  return [['all','전체'],...CATS.map(c=>[c.id,c.name])].map(([k,n])=>`<button type="button" class="tab" role="tab" data-tab="${k}" aria-selected="${k===cur}">${n} <small>${k==='all'?POSTS.length:POSTS.filter(p=>p.cat===k).length}</small></button>`).join('');
+}
+function postCard(p){
+  const c=catById(p.cat);
+  return `<a class="post-card" href="${postHref(p.id)}" data-go="post-${esc(p.id)}">
+    <div class="post-cover" ${isRef(p.cover)?`style="background-image:url('${esc(p.cover)}')"`:''}>${isRef(p.cover)?'':'에어컨탐정'}</div>
+    <div class="post-meta"><span class="c">${esc(c?.name||'사건 기록')}</span><span class="d">${esc(fmtDate(p.createdAt))}</span></div>
+    <h3>${esc(p.title)}</h3><p>${esc(excerptOf(p))}</p></a>`;
+}
+function emptyHtml(filtered){
+  if(postsState==='loading') return `<div class="empty">기록을 불러오는 중입니다.</div>`;
+  if(postsState==='unavailable') return `<div class="empty">지금은 사건 기록을 불러올 수 없습니다.</div>`;
+  if(filtered) return `<div class="empty">이 분류의 기록이 아직 없습니다.</div>`;
+  return `<div class="empty">아직 올린 사건 기록이 없습니다.${OWNER?`<div style="margin-top:16px"><a class="btn btn-red btn-sm" href="#write" data-go="write">첫 기록 쓰기</a></div>`:''}</div>`;
+}
+function renderAllPosts(){
+  $('[data-tabs="home"]').innerHTML=tabsHtml(homeTab);
+  $('[data-tabs="list"]').innerHTML=tabsHtml(listTab);
+  const h=(homeTab==='all'?POSTS:POSTS.filter(p=>p.cat===homeTab)).slice(0,3);
+  $('#homePosts').innerHTML=h.length?h.map(postCard).join(''):emptyHtml(POSTS.length>0);
+  const l=listTab==='all'?POSTS:POSTS.filter(p=>p.cat===listTab);
+  $('#allPosts').innerHTML=l.length?l.map(postCard).join(''):emptyHtml(POSTS.length>0);
+  if(currentPost) renderPost();
+}
+document.addEventListener('click',e=>{ const t=e.target.closest('[data-tab]'); if(!t) return; const box=t.closest('[data-tabs]').dataset.tabs; if(box==='home') homeTab=t.dataset.tab; else listTab=t.dataset.tab; renderAllPosts(); });
+function renderBlock(b){
+  if(b.t==='h') return b.text?`<h2>${esc(b.text)}</h2>`:'';
+  if(b.t==='quote') return b.text?`<blockquote>${textHtml(b.text)}</blockquote>`:'';
+  if(b.t==='img') return isRef(b.img)?`<figure><img src="${esc(b.img)}" alt="${esc(b.caption||'현장 사진')}" loading="lazy">${b.caption?`<figcaption>${esc(b.caption)}</figcaption>`:''}</figure>`:'';
+  return b.text?`<p>${textHtml(b.text)}</p>`:'';
+}
+function renderPost(){
+  const el=$('#postView'); const p=POSTS.find(x=>x.id===currentPost);
+  if(!p){ el.innerHTML=`<div class="post"><div class="empty">${postsState==='loading'?'기록을 불러오는 중입니다.':'기록을 찾을 수 없습니다. 삭제되었거나 주소가 바뀌었을 수 있습니다.'}<div style="margin-top:16px"><a class="btn btn-line btn-sm" href="#cases" data-go="cases">목록으로</a></div></div></div>`; return; }
+  const c=catById(p.cat); const others=POSTS.filter(x=>x.cat===p.cat&&x.id!==p.id).slice(0,3);
+  document.title=`${p.title} | 에어컨탐정`;
+  el.innerHTML=`<article class="post">
+    <a href="#cases" data-go="cases" style="align-self:flex-start;font-size:15px;color:var(--ink-soft);text-decoration:none;min-height:44px;display:inline-flex;align-items:center">← 사건 기록 목록</a>
+    <div class="post-top"><div class="info"><span class="badge">${esc(c?.name||'')}</span><span style="color:var(--muted)">${esc(fmtDate(p.createdAt))}</span></div>
+      <h1>${esc(p.title)}</h1>
+      ${OWNER?`<div class="owner-bar"><a class="btn btn-line btn-sm" href="#edit-${esc(p.id)}" data-go="edit-${esc(p.id)}">이 기록 수정</a></div>`:''}</div>
+    ${isRef(p.cover)&&!(p.blocks||[]).some(b=>b.t==='img'&&b.img===p.cover)?`<figure style="margin:0"><img src="${esc(p.cover)}" alt="${esc(p.title)}" style="width:100%;display:block"></figure>`:''}
+    <div class="prose">${(p.blocks||[]).map(renderBlock).join('')}</div>
+    <div class="post-cta"><b>비슷한 증상이 있나요?</b><div class="btns"><a class="btn btn-red" href="tel:${PHONE}">010-4748-3142 사건 의뢰</a><a class="btn btn-light" href="#quote-${esc(p.cat)}" data-go="quote-${esc(p.cat)}">견적 의뢰서</a></div></div>
+    ${others.length?`<div class="more"><h2>${esc(c?.name||'')} 기록 더 보기</h2>${others.map(o=>`<a href="${postHref(o.id)}" data-go="post-${esc(o.id)}">${esc(o.title)}</a>`).join('')}</div>`:''}
+  </article>`;
+}
+
+/* ---------- editor ---------- */
+let draft=null, draftId=null, delArmed=false, edUploading=0;
+const BLOCK_NAME={p:'문단',h:'소제목',img:'사진',quote:'인용'};
+function openEditor(id){
+  $('#writeCrumb').textContent=id?'기록 수정':'새 기록';
+  $('#writeTitle').textContent=id?'사건 기록 수정':'새 사건 기록 쓰기';
+  if(!OWNER){ $('#writeBody').innerHTML=`<div class="empty">기록 쓰기는 관리자만 할 수 있습니다.<div style="margin-top:16px"><a class="btn btn-red btn-sm" href="#admin" data-go="admin">관리자 로그인</a></div></div>`; return; }
+  if(draftId!==id||!draft){
+    const src=id?POSTS.find(p=>p.id===id):null;
+    if(id&&!src){ $('#writeBody').innerHTML=`<div class="empty">${postsState==='loading'?'기록을 불러오는 중입니다.':'수정할 기록을 찾을 수 없습니다.'}</div>`; draft=null; return; }
+    draft=src?JSON.parse(JSON.stringify({title:src.title||'',cat:src.cat||'clean',excerpt:src.excerpt||'',cover:src.cover||'',blocks:src.blocks||[]}))
+      :{title:'',cat:'clean',excerpt:'',cover:'',blocks:[{t:'p',text:''}]};
+    draftId=id;
+  }
+  delArmed=false; renderEditor();
+}
+function renderEditor(){
+  const d=draft, n=d.blocks.length, cat=catById(d.cat)||CATS[0];
+  $('#writeBody').innerHTML=`<form id="edForm" novalidate style="display:flex;flex-direction:column;gap:24px">
+    <fieldset class="field" style="margin:0;padding:0;border:0"><legend class="lbl" style="margin-bottom:10px">분류</legend>
+      <div class="pick">${CATS.map(c=>`<button type="button" data-act="cat" data-cat="${c.id}" aria-pressed="${c.id===d.cat}"><b>${c.name}</b><small>${c.sub}</small></button>`).join('')}</div></fieldset>
+    <div class="field"><label for="edTitle">제목 <i>*</i></label><input id="edTitle" data-k="title" type="text" value="${esc(d.title)}" placeholder="${esc(cat.hint)}"></div>
+    <div class="field"><label for="edEx">요약 <span class="help" style="font-weight:400">(목록에 보이는 한 줄, 비워 두면 첫 문단 사용)</span></label><textarea id="edEx" data-k="excerpt" style="min-height:80px">${esc(d.excerpt)}</textarea></div>
+    <div class="field"><span class="lbl">대표 사진</span>
+      <div class="ed-cover">${isRef(d.cover)?`<div class="ed-thumb" style="background-image:url('${esc(d.cover)}')"></div>`:''}
+        <label class="btn btn-line btn-sm" style="position:relative">${isRef(d.cover)?'사진 바꾸기':'사진 올리기'}<input type="file" accept="image/*" class="sr-only" data-up="cover"></label>
+        ${isRef(d.cover)?`<button type="button" class="link" data-act="rmcover">대표 사진 빼기</button>`:''}</div>
+      <span class="help">목록 카드에 쓰입니다. 비워 두면 본문 첫 사진이 대표 사진이 됩니다.</span></div>
+    <div class="field" style="margin-bottom:-12px"><span class="lbl">본문</span></div>
+    <div class="ed-blocks">${d.blocks.map((b,i)=>`<div class="ed-block">
+      <div class="ed-block-head"><b>${BLOCK_NAME[b.t]}</b><div class="ed-tools">
+        <button type="button" data-act="up" data-i="${i}" ${i===0?'disabled':''} aria-label="위로">↑</button>
+        <button type="button" data-act="down" data-i="${i}" ${i===n-1?'disabled':''} aria-label="아래로">↓</button>
+        <button type="button" data-act="rm" data-i="${i}" aria-label="블록 삭제">×</button></div></div>
+      ${b.t==='p'?`<textarea data-b="${i}" data-f="text" aria-label="문단" placeholder="현장 상태, 작업 과정, 결과를 적어 주세요.">${esc(b.text||'')}</textarea>`:''}
+      ${b.t==='quote'?`<textarea data-b="${i}" data-f="text" aria-label="인용" style="min-height:80px" placeholder="강조할 문장 (예: 사진만 보내 주시면 상태를 먼저 봐 드립니다. 010-4748-3142)">${esc(b.text||'')}</textarea>`:''}
+      ${b.t==='h'?`<input type="text" data-b="${i}" data-f="text" aria-label="소제목" value="${esc(b.text||'')}" placeholder="예: 원인은 송풍팬 곰팡이">`:''}
+      ${b.t==='img'?`<div class="ed-img">${b._preview?`<div class="ed-up"><img src="${b._preview}" alt=""><span>올리는 중…</span></div>`:isRef(b.img)?`<img src="${esc(b.img)}" alt="">`:''}
+        ${b._preview?'':`<label class="btn btn-line btn-sm" style="position:relative;align-self:flex-start">${isRef(b.img)?'사진 바꾸기':'사진 올리기'}<input type="file" accept="image/*" multiple class="sr-only" data-up="${i}"></label>`}
+        <input type="text" data-b="${i}" data-f="caption" aria-label="사진 설명" value="${esc(b.caption||'')}" placeholder="사진 설명 (선택)"></div>`:''}
+    </div>`).join('')}</div>
+    <div class="ed-add">${Object.entries(BLOCK_NAME).map(([t,nm])=>t==='img'?`<label class="btn btn-line btn-sm" style="position:relative">+ 사진 (여러 장 선택 가능)<input type="file" accept="image/*" multiple class="sr-only" data-up="new"></label>`:`<button type="button" class="btn btn-line btn-sm" data-act="add" data-t="${t}">+ ${nm}</button>`).join('')}</div>
+    <p class="help" style="text-align:center;margin:-12px 0 0">사진 여러 장을 한 번에 고르거나 이 화면에 끌어다 놓으면 순서대로 본문 끝에 추가됩니다.</p>
+    <div class="ed-actions">
+      <div>${draftId?`<button type="button" class="btn btn-danger btn-sm ${delArmed?'armed':''}" data-act="del">${delArmed?'한 번 더 누르면 삭제됩니다':'기록 삭제'}</button>`:''}</div>
+      <div><a class="btn btn-line" href="${draftId?'#post-'+esc(draftId):'#cases'}" data-go="${draftId?'post-'+esc(draftId):'cases'}" data-act="cancel">취소</a>
+      <button type="button" class="btn btn-red" data-act="save" ${edUploading?'disabled':''}>${edUploading?'사진 올리는 중…':esc(cat.name)+' 기록으로 게시'}</button></div>
+    </div></form>`;
+}
+const wb=$('#writeBody');
+wb.addEventListener('input',e=>{ const t=e.target; if(!draft) return; if(t.dataset.k) draft[t.dataset.k]=t.value; if(t.dataset.b!=null) draft.blocks[+t.dataset.b][t.dataset.f]=t.value; });
+wb.addEventListener('change',e=>{ const t=e.target; if(!draft||t.dataset.up==null) return; const files=[...(t.files||[])]; t.value=''; if(files.length) edAddPhotos(files,t.dataset.up); });
+async function edAddPhotos(files,target){
+  if(!draft) return;
+  const ok=files.filter(f=>f.type.startsWith('image/')&&f.size<=20*1024*1024);
+  if(ok.length<files.length) toast('사진이 아니거나 20MB보다 큰 파일은 뺐습니다');
+  if(!ok.length) return;
+  if(target==='cover'){ edUploading++; renderEditor(); try{ draft.cover=await upload(ok[0]); }catch(err){ toast(upErr(err)); } edUploading--; renderEditor(); return; }
+  const jobs=[], bl=draft.blocks; const at=target==='new'?bl.length:+target;
+  ok.forEach((f,k)=>{ let b; if(k===0&&target!=='new'){ b=bl[at]; } else { b={t:'img',img:'',caption:''}; bl.splice(target==='new'?bl.length:at+k,0,b); }
+    b._preview=URL.createObjectURL(f); b._new=!(k===0&&target!=='new'); jobs.push({f,b}); });
+  edUploading+=jobs.length; renderEditor();
+  let failed=0, i=0;
+  const worker=async()=>{ while(i<jobs.length){ const {f,b}=jobs[i++];
+    try{ b.img=await upload(f); if(!isRef(draft.cover)) draft.cover=b.img; }
+    catch(err){ failed++; if(b._new){ const j=draft.blocks.indexOf(b); if(j>=0) draft.blocks.splice(j,1); } }
+    URL.revokeObjectURL(b._preview); delete b._preview; delete b._new; edUploading--; if(draft) renderEditor(); } };
+  await Promise.all([worker(),worker(),worker()]);
+  if(failed) toast(`사진 ${failed}장을 올리지 못했습니다. 다시 시도해 주세요`); else if(jobs.length>1) toast(`사진 ${jobs.length}장을 올렸습니다`);
+}
+wb.addEventListener('dragover',e=>{ if(draft&&e.dataTransfer?.types?.includes('Files')){ e.preventDefault(); wb.classList.add('ed-dragging'); } });
+wb.addEventListener('dragleave',e=>{ if(e.target===wb||!wb.contains(e.relatedTarget)) wb.classList.remove('ed-dragging'); });
+wb.addEventListener('drop',e=>{ wb.classList.remove('ed-dragging'); if(!draft||!e.dataTransfer?.files?.length) return; e.preventDefault(); edAddPhotos([...e.dataTransfer.files],'new'); });
+wb.addEventListener('click',async e=>{
+  const b=e.target.closest('[data-act]'); if(!b||!draft) return;
+  const act=b.dataset.act, i=+b.dataset.i, bl=draft.blocks;
+  if(act==='cat'){ draft.cat=b.dataset.cat; renderEditor(); return; }
+  if(act==='add'){ bl.push({t:b.dataset.t,text:''}); renderEditor(); return; }
+  if(act==='up'&&i>0){ [bl[i-1],bl[i]]=[bl[i],bl[i-1]]; renderEditor(); return; }
+  if(act==='down'&&i<bl.length-1){ [bl[i+1],bl[i]]=[bl[i],bl[i+1]]; renderEditor(); return; }
+  if(act==='rm'){ bl.splice(i,1); renderEditor(); return; }
+  if(act==='rmcover'){ draft.cover=''; renderEditor(); return; }
+  if(act==='cancel'){ draft=null; draftId=null; return; }
+  if(act==='del'){
+    if(!delArmed){ delArmed=true; renderEditor(); clearTimeout(openEditor._t); openEditor._t=setTimeout(()=>{ if(delArmed){ delArmed=false; if(draft) renderEditor(); } },4000); return; }
+    try{ await api('posts?id='+encodeURIComponent(draftId),{method:'DELETE'}); toast('기록을 삭제했습니다'); draft=null; draftId=null; await loadPosts(); go('cases'); }
+    catch(_){ toast('삭제하지 못했습니다. 다시 시도해 주세요'); }
+    return;
+  }
+  if(act==='save'){
+    if(!draft.title.trim()){ toast('제목을 입력해 주세요'); $('#edTitle').focus(); return; }
+    const doc={title:draft.title.trim(),cat:draft.cat,excerpt:draft.excerpt.trim(),cover:isRef(draft.cover)?draft.cover:'',
+      blocks:draft.blocks.filter(x=>x.t==='img'?isRef(x.img):(x.text||'').trim()).map(x=>x.t==='img'?{t:'img',img:x.img,caption:(x.caption||'').trim()}:{t:x.t,text:x.text.trim()})};
+    b.disabled=true; b.textContent='저장하는 중…';
+    try{ const j=await api('posts',{method:'POST',body:{id:draftId,...doc}}); toast('기록을 게시했습니다'); draft=null; draftId=null; await loadPosts(); go('post-'+j.id); }
+    catch(err){ toast(err?.code==='login_required'?'관리자 로그인이 필요합니다':'저장하지 못했습니다. 다시 시도해 주세요'); b.disabled=false; b.textContent='다시 저장하기'; }
+  }
+});
+
+/* ---------- quote ---------- */
+let qSvc='';
+function setSvc(id){ qSvc=id||''; $$('#qPick button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.svc===qSvc)); }
+$('#qPick').addEventListener('click',e=>{ const b=e.target.closest('[data-svc]'); if(b) setSvc(b.dataset.svc); });
+$('#qPolicyBtn').addEventListener('click',()=>{ const p=$('#qPolicy'); p.hidden=!p.hidden; });
+$('#qPhone').addEventListener('input',e=>{ const d=e.target.value.replace(/\D/g,'').slice(0,11); e.target.value=d.length>7?`${d.slice(0,3)}-${d.slice(3,d.length-4)}-${d.slice(-4)}`:d.length>3?`${d.slice(0,3)}-${d.slice(3)}`:d; });
+$('#quoteForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const err=$('#qErr'), btn=$('#qBtn'); err.hidden=true;
+  const name=$('#qName').value.trim(), phone=$('#qPhone').value.trim();
+  const fail=(m,el)=>{ err.textContent=m; err.hidden=false; el?.focus(); };
+  if(!qSvc) return fail('필요한 작업을 골라 주세요.', $('#qPick button'));
+  if(!name) return fail('성함을 입력해 주세요.', $('#qName'));
+  if(!/^01[016789]-?\d{3,4}-?\d{4}$/.test(phone)) return fail('연락처를 정확히 입력해 주세요. 예) 010-1234-5678', $('#qPhone'));
+  if(!$('#qAgree').checked) return fail('개인정보 수집 · 이용에 동의해 주세요.', $('#qAgree'));
+  const body={name,phone,service:catById(qSvc)?.name||'',aircon:$('#qAircon').value,area:$('#qArea').value.trim(),memo:$('#qMemo').value.trim(),agree:true,website:$('#qWeb').value};
+  btn.disabled=true; btn.textContent='보내는 중…';
+  try{ await api('quote',{method:'POST',body}); $('#quoteForm').hidden=true; $('#qDone').hidden=false; window.scrollTo({top:0}); }
+  catch(x){
+    const sms=`sms:${PHONE}?body=${encodeURIComponent(`[에어컨탐정 견적 의뢰]\n${body.service} / ${body.aircon||'-'}\n${body.area||''}\n${name} ${phone}\n${body.memo}`)}`;
+    err.innerHTML=x.code==='phone_invalid'?'연락처를 정확히 입력해 주세요.':`의뢰서를 보내지 못했습니다. <a href="${sms}">문자로 보내기</a> 또는 <a href="tel:${PHONE}">전화</a>로 연락 주세요.`;
+    err.hidden=false; btn.disabled=false; btn.textContent='견적 의뢰 보내기';
+  }
+});
+function resetQuote(svc,memo){ setSvc(svc); if(memo&&!$('#qMemo').value) $('#qMemo').value=memo; if(!$('#qDone').hidden){ $('#quoteForm').reset(); setSvc(svc); $('#quoteForm').hidden=false; $('#qDone').hidden=true; } }
+
+/* ---------- admin ---------- */
+let QUOTES=[], quotesState='idle', admFilter='all', admDelArmed=null;
+const QSTATUS=['신규','연락완료','견적발송','종료'];
+async function loadQuotes(){ quotesState='loading'; renderAdmin(); try{ const j=await api('quotes'); QUOTES=j.quotes||[]; quotesState='ready'; }catch(_){ quotesState='error'; } renderAdmin(); }
+function renderAdmin(){
+  const body=$('#adminBody');
+  if(!OWNER){
+    if($('#admPw')) return;
+    body.innerHTML=`<form class="login" id="admLogin" novalidate><h2>관리자 로그인</h2><p style="margin:0;color:var(--ink-soft)">비밀번호를 입력하면 견적 의뢰 확인과 사건 기록 쓰기를 할 수 있습니다.</p>
+      <div class="field"><label for="admPw">비밀번호</label><input id="admPw" type="password" autocomplete="current-password"></div>
+      <p class="err" id="admErr" hidden></p><button type="submit" class="btn btn-ink" id="admBtn">로그인</button></form>`;
+    return;
+  }
+  const count=st=>QUOTES.filter(q=>(q.status||'신규')===st).length;
+  const rows=admFilter==='all'?QUOTES:QUOTES.filter(q=>(q.status||'신규')===admFilter);
+  const fmt=d=>{ try{ return new Date(d).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}); }catch(_){ return ''; } };
+  body.innerHTML=`<div class="adm-bar"><div><a class="btn btn-red btn-sm" href="#write" data-go="write">사건 기록 새로 쓰기</a><a class="btn btn-line btn-sm" href="#cases" data-go="cases">사건 기록 목록</a></div><button type="button" class="btn btn-line btn-sm" id="admLogout">로그아웃</button></div>
+    <div class="sec-head" style="margin:0"><p class="eyebrow">REQUESTS</p><h2 class="h2" style="font-size:28px">견적 의뢰</h2></div>
+    <div class="adm-sum"><div><span>신규</span><strong style="color:var(--red)">${count('신규')}</strong></div><div><span>연락 완료</span><strong>${count('연락완료')}</strong></div><div><span>견적 발송</span><strong>${count('견적발송')}</strong></div><div><span>전체</span><strong>${QUOTES.length}</strong></div></div>
+    <div class="tabs" style="margin:0">${[['all','전체'],...QSTATUS.map(x=>[x,x])].map(([v,n])=>`<button type="button" class="tab" data-f="${v}" aria-selected="${admFilter===v}">${n}</button>`).join('')}</div>
+    ${quotesState==='loading'&&!QUOTES.length?`<div class="empty">의뢰 내역을 불러오는 중입니다.</div>`
+    :quotesState==='error'?`<div class="empty">의뢰 내역을 불러오지 못했습니다. 잠시 후 다시 열어 주세요.</div>`
+    :rows.length?`<div class="scroll-x"><table class="adm-table"><thead><tr><th>접수</th><th>고객</th><th>서비스</th><th>에어컨 · 지역</th><th>내용</th><th>상태</th><th></th></tr></thead><tbody>${rows.map(q=>{ const k=esc(q.id); return `<tr>
+      <td style="white-space:nowrap">${esc(fmt(q.createdAt))}</td>
+      <td>${esc(q.name)}<small><a href="tel:${esc(String(q.phone).replace(/\D/g,''))}">${esc(q.phone)}</a></small>${q.smsSent===false?'<span class="flag">문자 미발송</span>':''}</td>
+      <td>${esc(q.service||'—')}</td><td>${esc(q.aircon||'—')}<small>${esc(q.area||'')}</small></td>
+      <td class="memo">${esc(q.memo||'—')}</td>
+      <td><select data-qid="${k}" aria-label="상태 변경">${QSTATUS.map(x=>`<option ${x===(q.status||'신규')?'selected':''}>${x}</option>`).join('')}</select></td>
+      <td><button type="button" class="del ${admDelArmed===q.id?'armed':''}" data-qdel="${k}">${admDelArmed===q.id?'삭제 확인':'삭제'}</button></td></tr>`; }).join('')}</tbody></table></div>`
+    :`<div class="empty">${QUOTES.length?'이 상태의 의뢰가 없습니다.':'아직 접수된 견적 의뢰가 없습니다.'}</div>`}`;
+}
+const ab=$('#adminBody');
+ab.addEventListener('submit',async e=>{
+  if(e.target.id!=='admLogin') return; e.preventDefault();
+  const pw=$('#admPw').value, btn=$('#admBtn'), err=$('#admErr'); err.hidden=true;
+  if(!pw){ err.textContent='비밀번호를 입력해 주세요.'; err.hidden=false; return; }
+  btn.disabled=true; btn.textContent='확인하는 중…';
+  try{ await api('admin',{method:'POST',body:{password:pw}}); await refreshOwner(); toast('로그인했습니다'); }
+  catch(x){ err.textContent=x.code==='wrong_password'?'비밀번호가 맞지 않습니다.':x.code==='not_configured'?'서버에 관리자 비밀번호가 설정되지 않았습니다.':'로그인하지 못했습니다. 잠시 후 다시 시도해 주세요.'; err.hidden=false; btn.disabled=false; btn.textContent='로그인'; }
+});
+ab.addEventListener('click',async e=>{
+  const c=e.target.closest('[data-f]'); if(c){ admFilter=c.dataset.f; renderAdmin(); return; }
+  if(e.target.id==='admLogout'){ try{ await api('admin',{method:'DELETE'}); }catch(_){} QUOTES=[]; await refreshOwner(); toast('로그아웃했습니다'); return; }
+  const d=e.target.closest('[data-qdel]'); if(!d) return;
+  const id=d.dataset.qdel;
+  if(admDelArmed!==id){ admDelArmed=id; renderAdmin(); clearTimeout(renderAdmin._t); renderAdmin._t=setTimeout(()=>{ admDelArmed=null; renderAdmin(); },4000); return; }
+  admDelArmed=null;
+  try{ await api('quotes?id='+encodeURIComponent(id),{method:'DELETE'}); QUOTES=QUOTES.filter(q=>q.id!==id); toast('의뢰를 삭제했습니다'); }catch(_){ toast('삭제하지 못했습니다'); }
+  renderAdmin();
+});
+ab.addEventListener('change',async e=>{
+  const sel=e.target.closest('select[data-qid]'); if(!sel) return;
+  const q=QUOTES.find(x=>x.id===sel.dataset.qid); if(!q) return; sel.disabled=true;
+  try{ await api('quotes?id='+encodeURIComponent(q.id),{method:'PATCH',body:{status:sel.value}}); q.status=sel.value; toast('상태를 '+sel.value+'(으)로 바꿨습니다'); }catch(_){ toast('상태를 바꾸지 못했습니다'); }
+  sel.disabled=false; renderAdmin();
+});
+
+/* ---------- router ---------- */
+const VIEWS=['home','cases','post','write','quote','admin'];
+function route(token,scrollId){
+  token=(token||'home').replace(/^#/,'');
+  let view=token, svc=null;
+  if(['service','clue','faq','records'].includes(token)){ scrollId=token; view='home'; }
+  if(token.startsWith('post-')){ view='post'; currentPost=token.slice(5); renderPost(); }
+  else if(token.startsWith('edit-')){ view='write'; openEditor(token.slice(5)); }
+  else if(token==='write'){ openEditor(null); }
+  else if(token.startsWith('quote')){ view='quote'; svc=token.split('-')[1]||''; }
+  else if(!VIEWS.includes(view)) view='home';
+  if(view!=='post'){ currentPost=null; document.title='에어컨탐정 | 대전·세종·충청권 에어컨 분해청소·수리·설치'; }
+  $$('[data-view]').forEach(v=>v.hidden=v.dataset.view!==view);
+  $('.cta').hidden=['write','admin','quote'].includes(view);
+  $('#fab').hidden=['write','admin'].includes(view);
+  if(view==='quote') resetQuote(svc, route._memo); route._memo=null;
+  if(view==='admin'){ renderAdmin(); if(OWNER&&quotesState!=='loading') loadQuotes(); }
+  const navKey=view==='post'||view==='write'?'cases':view;
+  $$('.nav a').forEach(a=>{ const on=(a.dataset.go===navKey&&!a.dataset.scroll&&view!=='home')||(view==='home'&&!!scrollId&&a.dataset.scroll===scrollId); if(on) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+  if(scrollId){ requestAnimationFrame(()=>document.getElementById(scrollId)?.scrollIntoView({behavior:'smooth',block:'start'})); }
+  else window.scrollTo({top:0,behavior:'auto'});
+}
+function go(t){ const onCase=/^\/cases\//.test(location.pathname); if(onCase){ location.href='/#'+t; return; } try{ history.pushState(null,'','#'+t); }catch(_){} route(t); }
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-go]'); if(!a||e.metaKey||e.ctrlKey) return;
+  e.preventDefault();
+  if(a.dataset.memo) route._memo=a.dataset.memo;
+  const t=a.dataset.go;
+  if(a.dataset.scroll){ if(/^\/cases\//.test(location.pathname)){ location.href='/#'+a.dataset.scroll; return; } try{ history.pushState(null,'','#'+a.dataset.scroll); }catch(_){} route('home',a.dataset.scroll); return; }
+  if(t.startsWith('post-')){ const id=t.slice(5); try{ history.pushState(null,'',postHref(id)); }catch(_){} route(t); return; }
+  if(/^\/cases\//.test(location.pathname)){ location.href='/#'+t; return; }
+  try{ history.pushState(null,'','#'+t); }catch(_){}
+  route(t);
+});
+function fromLocation(){ const m=location.pathname.match(/^\/cases\/([A-Za-z0-9_-]+)\/?$/); route(m?'post-'+m[1]:location.hash); }
+window.addEventListener('popstate',fromLocation);
+window.addEventListener('hashchange',()=>{ if(!/^\/cases\//.test(location.pathname)) route(location.hash); });
+
+async function refreshOwner(){
+  try{ OWNER=(await api('admin')).admin===true; }catch(_){ OWNER=false; }
+  $$('.owner-only').forEach(el=>el.hidden=!OWNER);
+  renderAllPosts();
+  const h=location.hash.replace(/^#/,'');
+  if(h==='admin'||h==='write'||h.startsWith('edit-')) route(h);
+}
+
+renderClue();
+renderAllPosts();
+fromLocation();
+refreshOwner();
+loadPosts();
+</script>
+</body>
+</html>
