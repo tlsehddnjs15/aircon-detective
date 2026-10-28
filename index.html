@@ -206,6 +206,13 @@ footer a{color:var(--muted)}
 .done{padding:40px 24px;text-align:center;background:var(--card);border:2px solid var(--ink);display:flex;flex-direction:column;gap:12px;align-items:center}
 .done h2{margin:0;font-family:var(--f-serif);font-size:28px}
 .hp{position:absolute;left:-9999px}
+.q-photos{display:flex;flex-wrap:wrap;gap:10px}
+.q-photos:empty{display:none}
+.q-ph{position:relative;width:96px;height:96px;background:#E6DFCF center/cover no-repeat;border:1px solid var(--line)}
+.q-ph.up::after{content:'올리는 중';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(30,27,22,.55);color:#fff;font-size:13px;font-weight:700}
+.q-ph button{position:absolute;right:-8px;top:-8px;width:28px;height:28px;border-radius:50%;border:0;background:var(--ink);color:#fff;cursor:pointer;font-size:16px;line-height:1}
+.adm-ph{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.adm-ph a{display:block;width:56px;height:56px;background:#E6DFCF center/cover no-repeat;border:1px solid var(--line)}
 
 /* editor */
 .ed-blocks{display:flex;flex-direction:column;gap:14px}
@@ -438,11 +445,15 @@ footer a{color:var(--muted)}
       <div class="field"><label for="qName">성함 <i>*</i></label><input id="qName" type="text" autocomplete="name" maxlength="30"></div>
       <div class="field"><label for="qPhone">연락처 <i>*</i></label><input id="qPhone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" maxlength="13"></div>
       <div class="field"><label for="qMemo">증상이나 요청사항</label><textarea id="qMemo" maxlength="600" placeholder="예) 켤 때마다 냄새가 나요. 스탠드 1대, 이번 주말 가능할까요?"></textarea>
-        <span class="help">에어컨 모델명 또는 정면 사진이 있으면 상담 전화 때 문자로 보내 주세요. 더 정확한 견적을 드릴 수 있어요.</span></div>
+        </div>
+      <div class="field"><span class="lbl">사진 첨부 <span class="help" style="font-weight:400">(선택, 최대 5장)</span></span>
+        <div class="q-photos" id="qPhotos"></div>
+        <label class="btn btn-line btn-sm" id="qAddPhoto" style="position:relative;align-self:flex-start">+ 사진 넣기<input type="file" accept="image/*" multiple class="sr-only" id="qFile"></label>
+        <span class="help">에어컨 정면, 모델명 스티커, 고장 부위 사진을 넣어 주시면 더 정확하게 안내해 드려요.</span></div>
       <input class="hp" type="text" id="qWeb" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="field">
         <label class="agree"><input type="checkbox" id="qAgree"><span>개인정보 수집 · 이용에 동의합니다. <button type="button" class="link" id="qPolicyBtn" style="min-height:auto;padding:0">내용 보기</button></span></label>
-        <div class="policy" id="qPolicy" hidden>수집 항목: 성함, 연락처, 지역, 요청 내용 · 이용 목적: 견적 안내와 작업 일정 연락 · 보관 기간: 상담 종료 후 1년 뒤 파기. 동의하지 않으실 수 있으며, 이 경우 전화(010-4748-3142)로 상담해 주세요.</div>
+        <div class="policy" id="qPolicy" hidden>수집 항목: 성함, 연락처, 지역, 요청 내용, 첨부 사진 · 이용 목적: 견적 안내와 작업 일정 연락 · 보관 기간: 상담 종료 후 1년 뒤 파기. 동의하지 않으실 수 있으며, 이 경우 전화(010-4748-3142)로 상담해 주세요.</div>
       </div>
       <p class="err" id="qErr" hidden></p>
       <button type="submit" class="btn btn-red btn-lg" id="qBtn">견적 의뢰 보내기</button>
@@ -706,6 +717,30 @@ function setSvc(id){ qSvc=id||''; $$('#qPick button').forEach(b=>b.setAttribute(
 $('#qPick').addEventListener('click',e=>{ const b=e.target.closest('[data-svc]'); if(b) setSvc(b.dataset.svc); });
 $('#qPolicyBtn').addEventListener('click',()=>{ const p=$('#qPolicy'); p.hidden=!p.hidden; });
 $('#qPhone').addEventListener('input',e=>{ const d=e.target.value.replace(/\D/g,'').slice(0,11); e.target.value=d.length>7?`${d.slice(0,3)}-${d.slice(3,d.length-4)}-${d.slice(-4)}`:d.length>3?`${d.slice(0,3)}-${d.slice(3)}`:d; });
+let qPhotos=[];
+function renderQPhotos(){
+  $('#qPhotos').innerHTML=qPhotos.map((p,i)=>`<div class="q-ph ${p.url?'':'up'}" style="background-image:url('${p.preview}')"><button type="button" data-qrm="${i}" aria-label="사진 ${i+1} 빼기">×</button></div>`).join('');
+  $('#qAddPhoto').hidden=qPhotos.length>=5;
+}
+$('#qPhotos').addEventListener('click',e=>{ const b=e.target.closest('[data-qrm]'); if(!b) return; const p=qPhotos.splice(+b.dataset.qrm,1)[0]; if(p) URL.revokeObjectURL(p.preview); renderQPhotos(); });
+$('#qFile').addEventListener('change',async e=>{
+  const files=[...(e.target.files||[])].filter(f=>f.type.startsWith('image/')); e.target.value='';
+  const room=5-qPhotos.length; if(files.length>room) toast('사진은 5장까지 넣을 수 있어요');
+  const jobs=files.slice(0,room).map(f=>{ const p={preview:URL.createObjectURL(f),url:''}; qPhotos.push(p); return {f,p}; });
+  renderQPhotos();
+  for(const {f,p} of jobs){
+    try{
+      const s=await shrinkImage(f);
+      if(s.size>10*1024*1024) throw new Error('too_large');
+      const j=await api('quote-upload',{method:'POST',body:{type:s.type||'image/jpeg'}});
+      const fd=new FormData(); fd.append('cacheControl','31536000'); fd.append('',s);
+      const r=await fetch(j.uploadUrl,{method:'PUT',body:fd,headers:{'x-upsert':'false'}});
+      if(!r.ok) throw new Error('upload_failed');
+      p.url=j.publicUrl;
+    }catch(_){ const i=qPhotos.indexOf(p); if(i>=0) qPhotos.splice(i,1); toast('사진 한 장을 올리지 못했어요. 다시 넣어 주세요'); }
+    renderQPhotos();
+  }
+});
 $('#quoteForm').addEventListener('submit',async e=>{
   e.preventDefault();
   const err=$('#qErr'), btn=$('#qBtn'); err.hidden=true;
@@ -715,7 +750,8 @@ $('#quoteForm').addEventListener('submit',async e=>{
   if(!name) return fail('성함을 입력해 주세요.', $('#qName'));
   if(!/^01[016789]-?\d{3,4}-?\d{4}$/.test(phone)) return fail('연락처를 정확히 입력해 주세요. 예) 010-1234-5678', $('#qPhone'));
   if(!$('#qAgree').checked) return fail('개인정보 수집 · 이용에 동의해 주세요.', $('#qAgree'));
-  const body={name,phone,service:catById(qSvc)?.name||'',aircon:$('#qAircon').value,area:$('#qArea').value.trim(),memo:$('#qMemo').value.trim(),agree:true,website:$('#qWeb').value};
+  if(qPhotos.some(p=>!p.url)) return fail('사진을 올리는 중이에요. 잠시 후 다시 눌러 주세요.', $('#qBtn'));
+  const body={name,phone,service:catById(qSvc)?.name||'',aircon:$('#qAircon').value,area:$('#qArea').value.trim(),memo:$('#qMemo').value.trim(),photos:qPhotos.map(p=>p.url),agree:true,website:$('#qWeb').value};
   btn.disabled=true; btn.textContent='보내는 중…';
   try{ await api('quote',{method:'POST',body}); $('#quoteForm').hidden=true; $('#qDone').hidden=false; window.scrollTo({top:0}); }
   catch(x){
@@ -724,7 +760,7 @@ $('#quoteForm').addEventListener('submit',async e=>{
     err.hidden=false; btn.disabled=false; btn.textContent='견적 의뢰 보내기';
   }
 });
-function resetQuote(svc,memo){ setSvc(svc); if(memo&&!$('#qMemo').value) $('#qMemo').value=memo; if(!$('#qDone').hidden){ $('#quoteForm').reset(); setSvc(svc); $('#quoteForm').hidden=false; $('#qDone').hidden=true; } }
+function resetQuote(svc,memo){ setSvc(svc); if(memo&&!$('#qMemo').value) $('#qMemo').value=memo; if(!$('#qDone').hidden){ $('#quoteForm').reset(); qPhotos=[]; renderQPhotos(); setSvc(svc); $('#quoteForm').hidden=false; $('#qDone').hidden=true; } }
 
 /* ---------- admin ---------- */
 let QUOTES=[], quotesState='idle', admFilter='all', admDelArmed=null;
@@ -752,7 +788,7 @@ function renderAdmin(){
       <td style="white-space:nowrap">${esc(fmt(q.createdAt))}</td>
       <td>${esc(q.name)}<small><a href="tel:${esc(String(q.phone).replace(/\D/g,''))}">${esc(q.phone)}</a></small>${q.smsSent===false?'<span class="flag">문자 미발송</span>':''}</td>
       <td>${esc(q.service||'—')}</td><td>${esc(q.aircon||'—')}<small>${esc(q.area||'')}</small></td>
-      <td class="memo">${esc(q.memo||'—')}</td>
+      <td class="memo">${esc(q.memo||'—')}${(q.photos||[]).length?`<div class="adm-ph">${q.photos.map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener" style="background-image:url('${esc(u)}')" aria-label="첨부 사진 ${i+1} 크게 보기"></a>`).join('')}</div>`:''}</td>
       <td><select data-qid="${k}" aria-label="상태 변경">${QSTATUS.map(x=>`<option ${x===(q.status||'신규')?'selected':''}>${x}</option>`).join('')}</select></td>
       <td><button type="button" class="del ${admDelArmed===q.id?'armed':''}" data-qdel="${k}">${admDelArmed===q.id?'삭제 확인':'삭제'}</button></td></tr>`; }).join('')}</tbody></table></div>`
     :`<div class="empty">${QUOTES.length?'이 상태의 의뢰가 없습니다.':'아직 접수된 견적 의뢰가 없습니다.'}</div>`}`;
