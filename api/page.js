@@ -29,6 +29,7 @@ function articleHtml(p) {
     if (b.t === 'p') return oneLine(b.text) ? `<p>${esc(b.text).replace(/\n/g, '<br>')}</p>` : '';
     if (b.t === 'h') return `<h2>${esc(b.text)}</h2>`;
     if (b.t === 'quote') return `<blockquote>${esc(b.text).replace(/\n/g, '<br>')}</blockquote>`;
+    if (b.t === 'vid' && b.img) return `<figure><video src="${esc(b.img)}" controls playsinline preload="metadata" width="800" style="max-width:100%;height:auto"></video>${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ''}</figure>`;
     if (b.t === 'img' && b.img) return `<figure><img src="${esc(b.img)}" alt="${esc(cut(b.caption || p.title, 120))}" loading="lazy" width="800">${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ''}</figure>`;
     return '';
   }).join('\n');

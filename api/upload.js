@@ -3,7 +3,7 @@
 import crypto from 'node:crypto';
 import { UPLOAD_DIR, guard, publicUrl, readBody, send, signUpload } from './_lib.js';
 
-const EXT = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif' };
+const EXT = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif', 'video/mp4': 'mp4', 'video/quicktime': 'mov', 'video/webm': 'webm' };
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

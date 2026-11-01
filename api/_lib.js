@@ -48,7 +48,7 @@ export function storagePathOf(url) {
   const prefix = `${SB_URL()}/storage/v1/object/public/${BUCKET}/`;
   if (typeof url !== 'string' || !url.startsWith(prefix)) return null;
   const path = url.slice(prefix.length);
-  return /^[a-z]+\/[0-9]{6}\/[a-z0-9]{8,40}\.(jpg|png|webp|gif)$/.test(path) ? path : null;
+  return /^[a-z]+\/[0-9]{6}\/[a-z0-9]{8,40}\.(jpg|png|webp|gif|mp4|mov|webm)$/.test(path) ? path : null;
 }
 
 /** 브라우저가 Supabase로 직접 올릴 수 있는 1회용 업로드 주소 */

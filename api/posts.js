@@ -6,7 +6,7 @@ const toClient = (r) => ({
   id: r.id, title: r.title, cat: r.cat, excerpt: r.excerpt, cover: r.cover,
   blocks: Array.isArray(r.blocks) ? r.blocks : [], createdAt: r.created_at, updatedAt: r.updated_at,
 });
-const imagesOf = (p) => [p.cover, ...(p.blocks || []).filter((b) => b.t === 'img').map((b) => b.img)];
+const imagesOf = (p) => [p.cover, ...(p.blocks || []).filter((b) => b.t === 'img' || b.t === 'vid').map((b) => b.img)];
 
 function validate(body) {
   const title = clean(body.title, 120);
@@ -16,6 +16,7 @@ function validate(body) {
   const blocks = (Array.isArray(body.blocks) ? body.blocks : []).slice(0, 100).map((b) => {
     if (!b || typeof b !== 'object') return null;
     if (b.t === 'img') return storagePathOf(b.img) ? { t: 'img', img: b.img, caption: clean(b.caption, 1000) } : null;
+    if (b.t === 'vid') return storagePathOf(b.img) ? { t: 'vid', img: b.img, caption: clean(b.caption, 1000) } : null;
     if (['p', 'h', 'quote'].includes(b.t)) {
       const text = b.t === 'h' ? clean(b.text, 120) : String(b.text ?? '').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').trim().slice(0, 5000);
       return text ? { t: b.t, text } : null;
