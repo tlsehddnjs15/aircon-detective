@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N;CHARSET=UTF-8:신;동원;;;
+FN;CHARSET=UTF-8:신동원 (에어컨탐정)
+ORG;CHARSET=UTF-8:에어컨탐정
+TITLE;CHARSET=UTF-8:대표
+TEL;TYPE=CELL,VOICE:010-4748-3142
+URL:https://aircon-detective.vercel.app/
+ADR;TYPE=WORK;CHARSET=UTF-8:;;;유성구;대전;;대한민국
+NOTE;CHARSET=UTF-8:에어컨 분해청소 · 수리 · 설치 / 대전·세종·충청권 24시간
+END:VCARD
