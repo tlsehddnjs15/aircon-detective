@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>에어컨탐정 신동원 대표 · 모바일 명함</title>
+<title>에어컨탐정 신동원 대표 명함</title>
 <meta name="description" content="에어컨 냄새·고장, 원인부터 찾아냅니다. 대전·세종·충청권 분해청소·수리·설치, 24시간 상담 010-4748-3142">
 <meta property="og:type" content="profile">
-<meta property="og:title" content="에어컨탐정 · 신동원 대표">
+<meta property="og:title" content="에어컨탐정 신동원 대표 명함">
 <meta property="og:description" content="분해청소 · 수리 · 설치 | 대전·세종·충청권 24시간 상담 010-4748-3142">
 <meta property="og:image" content="https://aircon-detective.vercel.app/img/detective.png">
 <meta property="og:url" content="https://aircon-detective.vercel.app/card/">
@@ -126,7 +126,7 @@ h1{margin:0;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:36px;li
     if(navigator.clipboard){navigator.clipboard.writeText(acc).then(function(){toast('계좌번호를 복사했어요')},function(){toast(acc)})}else{toast(acc)}
   });
   document.getElementById('share').addEventListener('click',function(){
-    if(navigator.share){navigator.share({title:'에어컨탐정 · 신동원 대표',text:'에어컨 분해청소 · 수리 · 설치 010-4748-3142',url:url}).catch(function(){});return}
+    if(navigator.share){navigator.share({title:'에어컨탐정 신동원 대표 명함',text:'에어컨 분해청소 · 수리 · 설치 010-4748-3142',url:url}).catch(function(){});return}
     if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('명함 주소를 복사했어요')},function(){toast(url)})}else{toast(url)}
   });
 })();
