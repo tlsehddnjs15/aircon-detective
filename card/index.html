@@ -23,17 +23,24 @@ html,body{margin:0;background:#1E1B16}
 body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:440px;margin:0 auto;min-height:100vh;background:var(--paper);display:flex;flex-direction:column;padding-bottom:calc(28px + env(safe-area-inset-bottom))}
-.hero{position:relative;height:370px;background:var(--ink);color:var(--paper);overflow:hidden}
-.band{position:absolute;left:0;right:0;top:0;height:32px;background:var(--red);display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:var(--card);font-size:12px}
-.band b{font-family:'Nanum Gothic Coding',monospace;letter-spacing:.2em;font-size:11px}
-.hero img{position:absolute;right:-22px;bottom:-26px;height:300px;width:auto}
-.brand{position:absolute;z-index:1;left:22px;top:60px;width:190px;display:flex;flex-direction:column;gap:6px}
-.eyebrow{display:flex;align-items:center;gap:6px;font-family:'Nanum Gothic Coding',monospace;font-size:11px;letter-spacing:.18em;color:var(--gold)}
-h1{margin:0;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:36px;line-height:1.1;color:var(--card);white-space:nowrap}
-.tag{margin:0;font-size:14px;line-height:1.55;color:var(--sand)}
-.who{position:absolute;z-index:1;left:22px;bottom:26px;display:flex;flex-direction:column;gap:2px}
-.who small{font-size:12px;color:var(--sand)}
-.who strong{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:25px;letter-spacing:.06em;color:var(--card)}
+.hero{background:var(--ink);padding:34px 20px 28px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.hero h1{margin:0;position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.cardbox{width:100%;max-width:400px;aspect-ratio:340/189;position:relative;transform:rotate(-2deg);filter:drop-shadow(0 14px 22px rgba(0,0,0,.45))}
+.bc{position:absolute;left:0;top:0;width:340px;height:189px;transform-origin:0 0;transform:scale(var(--k,1));background:#FFFDF7;color:#1E1B16;overflow:hidden;border-radius:3px}
+.bc-band{height:26px;background:#9E2019;color:#FFFDF7;display:flex;align-items:center;justify-content:space-between;padding:0 16px}
+.bc-band b{font-family:'Nanum Gothic Coding',monospace;font-weight:700;font-size:9px;letter-spacing:.2em}
+.bc-band span{font-size:9px;font-weight:500;letter-spacing:.06em}
+.bc-pic{position:absolute;left:10px;top:26px;bottom:0;width:128px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.bc-pic img{height:172px;width:auto;margin-bottom:-16px}
+.bc-txt{position:absolute;left:146px;right:16px;top:40px;bottom:16px;display:flex;flex-direction:column;justify-content:space-between}
+.bc-name{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:28px;line-height:1.1;letter-spacing:-.01em;display:block}
+.bc-svc{font-family:'Nanum Gothic Coding',monospace;font-size:9px;letter-spacing:.14em;color:#5E574B;display:block;margin-top:3px}
+.bc-who{border-top:1px dashed #B5AC98;padding-top:8px;display:flex;flex-direction:column;gap:2px}
+.bc-who div{display:flex;align-items:baseline;gap:6px}
+.bc-who small{font-size:10px;color:#5E574B}
+.bc-who strong{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:15px;letter-spacing:.06em}
+.bc-tel{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:19px;letter-spacing:.02em;color:#9E2019}
+.hero-cap{margin:0;font-size:13px;color:var(--sand);text-align:center;line-height:1.5}
 .actions{padding:20px 18px 0;display:flex;flex-direction:column;gap:10px}
 .call{display:flex;align-items:center;gap:12px;min-height:64px;padding:0 18px;background:var(--red);color:var(--card);border-radius:12px}
 .call span{display:flex;flex-direction:column}
@@ -61,14 +68,18 @@ h1{margin:0;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:36px;li
 <body>
 <main class="wrap">
   <section class="hero">
-    <div class="band"><b>CASE FILE</b><span>24시간 사건 접수</span></div>
-    <img src="/img/detective.png" alt="에어컨탐정 신동원 대표 캐릭터">
-    <div class="brand">
-      <div class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg>AIRCON DETECTIVE</div>
-      <h1>에어컨탐정</h1>
-      <p class="tag">에어컨 냄새 · 고장,<br>원인부터 찾아냅니다.</p>
+    <h1>에어컨탐정 신동원 대표 명함</h1>
+    <div class="cardbox" id="cardbox">
+      <div class="bc" role="img" aria-label="에어컨탐정 명함 앞면: 분해청소·수리·설치, 탐정 신동원, 010-4748-3142">
+        <div class="bc-band" aria-hidden="true"><b>CASE FILE</b><span>에어컨 사건 접수 24시간</span></div>
+        <div class="bc-pic" aria-hidden="true"><img src="/img/detective.png" alt=""></div>
+        <div class="bc-txt" aria-hidden="true">
+          <div><span class="bc-name">에어컨탐정</span><span class="bc-svc">분해청소 · 수리 · 설치</span></div>
+          <div class="bc-who"><div><small>탐정</small><strong>신동원</strong></div><span class="bc-tel">010-4748-3142</span></div>
+        </div>
+      </div>
     </div>
-    <div class="who"><small>대표 · 담당 탐정</small><strong>신동원</strong></div>
+    <p class="hero-cap">에어컨 냄새 · 고장, 원인부터 찾아냅니다.<br>대전 · 세종 · 충청권 24시간 출동</p>
   </section>
 
   <nav class="actions" aria-label="연락하기">
@@ -118,6 +129,10 @@ h1{margin:0;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:36px;li
 <div class="toast" id="toast" role="status"></div>
 <script>
 (function(){
+  var box=document.getElementById('cardbox');
+  function fit(){box.style.setProperty('--k',box.clientWidth/340)}
+  fit();window.addEventListener('resize',fit);
+  if(window.ResizeObserver)new ResizeObserver(fit).observe(box);
   var url='https://aircon-detective.vercel.app/card/';
   var t=document.getElementById('toast');
   function toast(m){t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on')},1800)}
