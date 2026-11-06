@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>에어컨탐정 | 대전·세종·충청권 에어컨 분해청소·수리·설치</title>
-<meta name="description" content="에어컨 냄새·고장, 원인부터 찾아냅니다. 대전·세종·충청권 에어컨 분해청소, 고장 진단·수리, 설치·이전설치. 24시간 상담 010-4748-3142">
+<title>에어컨탐정 | 대전·세종·충청권 에어컨 분해청소·수리·설치·철거</title>
+<meta name="description" content="에어컨 냄새·고장, 원인부터 찾아냅니다. 대전·세종·충청권 에어컨 분해청소, 고장 진단·수리, 설치·이전설치, 해체·철거. 24시간 상담 010-4748-3142">
 <meta property="og:type" content="website">
-<meta property="og:title" content="에어컨탐정 | 에어컨 분해청소·수리·설치">
+<meta property="og:title" content="에어컨탐정 | 에어컨 분해청소·수리·설치·철거">
 <meta property="og:description" content="에어컨 냄새·고장, 원인부터 찾아냅니다. 대전·세종·충청권 24시간 상담">
 <meta property="og:image" content="https://aircon-detective.vercel.app/img/hero-jail.jpg">
 <meta property="og:site_name" content="에어컨탐정">
@@ -90,6 +90,9 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 /* cards */
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+@media (max-width:1100px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid4{grid-template-columns:1fr}}
 .svc{background:var(--paper);border:1px solid var(--line);padding:30px;display:flex;flex-direction:column;gap:14px}
 .svc-ic{width:54px;height:54px;border:2px solid var(--red);display:flex;align-items:center;justify-content:center}
 .svc h3{margin:0;font-family:var(--f-serif);font-weight:800;font-size:26px}
@@ -198,8 +201,9 @@ footer a{color:var(--muted)}
 .field input[type=text],.field input[type=tel],.field input[type=password],.field select,.field textarea{min-height:52px;padding:10px 16px;border:1.5px solid var(--line);background:var(--card);font-size:17px;border-radius:0;width:100%}
 .field textarea{min-height:120px;resize:vertical}
 .help{font-size:14px;color:var(--muted)}
-.pick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-@media (max-width:560px){.pick{grid-template-columns:1fr}}
+.pick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:760px){.pick{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.pick{grid-template-columns:1fr}}
 .pick button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:72px;padding:12px 16px;cursor:pointer;text-align:left;background:var(--card);color:var(--ink);border:2px solid var(--line)}
 .pick button[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--red)}
 .pick b{font-size:18px}.pick small{font-size:13px;opacity:.85}
@@ -268,7 +272,7 @@ footer a{color:var(--muted)}
   <div class="wrap">
     <a class="logo" href="#home" data-go="home" aria-label="에어컨탐정 홈">
       <span class="logo-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></span>
-      <span class="logo-txt"><b>에어컨탐정</b><small>분해청소 · 수리 · 설치</small></span>
+      <span class="logo-txt"><b>에어컨탐정</b><small>분해청소 · 수리 · 설치 · 철거</small></span>
     </a>
     <nav class="nav" aria-label="주 메뉴">
       <a href="#service" data-go="home" data-scroll="service">서비스</a>
@@ -289,7 +293,7 @@ footer a{color:var(--muted)}
       <div class="hero-copy">
         <p class="eyebrow" style="color:var(--muted);font-weight:400">대전 · 세종 · 충청권 출동</p>
         <h1>에어컨 냄새 · 고장,<br><em>원인</em>부터 찾아냅니다.</h1>
-        <p class="hero-sub">냄새, 물 떨어짐, 시원하지 않은 바람. 증상을 단서 삼아 원인을 찾고, 분해청소 · 수리 · 설치 중 꼭 필요한 작업만 제안합니다.</p>
+        <p class="hero-sub">냄새, 물 떨어짐, 시원하지 않은 바람. 증상을 단서 삼아 원인을 찾고, 분해청소 · 수리 · 설치 · 철거 중 꼭 필요한 작업만 제안합니다.</p>
         <div class="btns">
           <a class="btn btn-red btn-lg" href="tel:01047483142">전화로 사건 의뢰</a>
           <a class="btn btn-line btn-lg" href="#quote" data-go="quote">견적 의뢰서 쓰기</a>
@@ -307,8 +311,8 @@ footer a{color:var(--muted)}
 
   <section id="service" class="sec" style="background:var(--card);border-top:2px solid var(--ink)">
     <div class="wrap">
-      <div class="sec-head"><p class="eyebrow">SERVICE</p><h2 class="h2">에어컨 일, 한 번에 맡기세요</h2><p class="lead">분해청소부터 고장 수리, 설치까지 한 업체가 처음부터 끝까지 책임집니다.</p></div>
-      <div class="grid3">
+      <div class="sec-head"><p class="eyebrow">SERVICE</p><h2 class="h2">에어컨 일, 한 번에 맡기세요</h2><p class="lead">분해청소부터 고장 수리, 설치, 해체·철거까지 한 업체가 처음부터 끝까지 책임집니다.</p></div>
+      <div class="grid4">
         <article class="svc">
           <span class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7c-3 3.6-6 7-6 10.3a6 6 0 0 0 12 0c0-3.3-3-6.7-6-10.3z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></span>
           <h3>완전 분해청소</h3>
@@ -329,6 +333,13 @@ footer a{color:var(--muted)}
           <p>새 에어컨 설치, 이사할 때 떼고 다시 다는 이전설치, 배관 연장과 매립 배관 작업까지 합니다.</p>
           <ul><li>벽걸이 · 스탠드 · 시스템 에어컨</li><li>이전설치, 배관 연장</li><li>실외기 앵글 · 난간 설치</li></ul>
           <a class="btn btn-red" href="#quote-install" data-go="quote-install">설치 견적 의뢰 <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="svc">
+          <span class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/><path d="M10 11v5M14 11v5"/></svg></span>
+          <h3>해체 · 철거</h3>
+          <p>이사, 폐업, 인테리어 공사 전 에어컨을 안전하게 떼어 냅니다. 냉매를 회수한 뒤 철거하고, 남은 자리까지 정리합니다.</p>
+          <ul><li>벽걸이 · 스탠드 · 천장형 시스템 에어컨</li><li>실외기 · 앵글 · 배관 철거</li><li>배관 구멍 마감 · 벽면 정리</li><li>상가 · 사무실 원상복구</li></ul>
+          <a class="btn btn-red" href="#quote-remove" data-go="quote-remove">철거 견적 의뢰 <span aria-hidden="true">→</span></a>
         </article>
       </div>
     </div>
@@ -353,10 +364,11 @@ footer a{color:var(--muted)}
   <section class="sec dark">
     <div class="wrap">
       <div class="sec-head"><h2 class="h2">담당 사건</h2></div>
-      <div class="grid3">
+      <div class="grid4">
         <article class="case-card"><span class="no">사건 01 · 분해청소</span><h3>냄새의 정체</h3><p>범인은 송풍팬과 열교환기 속 곰팡이. 완전 분해 후 고압 세척으로 뿌리째 제거합니다.</p><small>벽걸이 · 스탠드 · 천장형 1way · 4way · 실외기</small></article>
         <article class="case-card"><span class="no">사건 02 · 진단 · 수리</span><h3>사라진 찬바람</h3><p>냉매 누설, 막힌 배수, 에러 코드, 소음. 하나씩 확인해서 진짜 원인을 찾아 고칩니다.</p><small>냉매 충전 · 배수 · 부품 교체</small></article>
         <article class="case-card"><span class="no">사건 03 · 설치</span><h3>새집으로의 이사</h3><p>떼어 내고, 옮기고, 다시 단다. 배관 길이와 실외기 위치까지 꼼꼼하게 맞춥니다.</p><small>신규 · 이전설치 · 배관 연장</small></article>
+        <article class="case-card"><span class="no">사건 04 · 해체철거</span><h3>떠난 자리의 정리</h3><p>냉매부터 회수하고, 실내기와 실외기를 떼어 낸다. 배관 구멍과 벽면까지 깔끔하게 마무리합니다.</p><small>철거 · 실외기 · 원상복구</small></article>
       </div>
     </div>
   </section>
@@ -403,7 +415,7 @@ footer a{color:var(--muted)}
   <div class="page-head"><div class="wrap">
     <div class="crumb"><a href="#home" data-go="home">홈</a><span>/</span><span>사건 기록</span></div>
     <div class="head-row" style="margin:0">
-      <div class="sec-head" style="margin:0"><p class="eyebrow">CASE RECORDS</p><h1 class="h2" style="font-size:clamp(34px,4.6vw,46px)">사건 기록</h1><p class="lead">분해청소, 수리, 설치 현장을 분류별로 모아 봅니다.</p></div>
+      <div class="sec-head" style="margin:0"><p class="eyebrow">CASE RECORDS</p><h1 class="h2" style="font-size:clamp(34px,4.6vw,46px)">사건 기록</h1><p class="lead">분해청소, 수리, 설치, 해체철거 현장을 분류별로 모아 봅니다.</p></div>
       <a class="btn btn-ink btn-sm owner-only" hidden href="#write" data-go="write">기록 쓰기 (관리자)</a>
     </div>
   </div></div>
@@ -441,6 +453,7 @@ footer a{color:var(--muted)}
           <button type="button" data-svc="clean" aria-pressed="false"><b>분해청소</b><small>냄새 · 곰팡이 · 정기 세척</small></button>
           <button type="button" data-svc="repair" aria-pressed="false"><b>수리</b><small>냉방 불량 · 누수 · 에러</small></button>
           <button type="button" data-svc="install" aria-pressed="false"><b>설치</b><small>신규 · 이전설치 · 배관</small></button>
+          <button type="button" data-svc="remove" aria-pressed="false"><b>해체철거</b><small>철거 · 실외기 · 원상복구</small></button>
         </div>
       </fieldset>
       <div class="field"><label for="qAircon">에어컨 종류</label>
@@ -507,7 +520,8 @@ if(KAKAO_URL){ const k=$('#fabKakao'); k.href=KAKAO_URL; k.hidden=false; }
 
 const CATS=[{id:'clean',name:'분해청소',sub:'벽걸이 · 스탠드 · 천장형 1way · 4way',hint:'예) 봉명동 아파트, 곰팡이 냄새 나던 스탠드 에어컨 분해청소'},
   {id:'repair',name:'수리',sub:'냉방 불량 · 누수 · 에러',hint:'예) 도안동 사무실, 물 떨어지던 벽걸이 배수 막힘 수리'},
-  {id:'install',name:'설치',sub:'신규 · 이전설치 · 배관',hint:'예) 노은동 이사 후 스탠드 에어컨 이전설치'}];
+  {id:'install',name:'설치',sub:'신규 · 이전설치 · 배관',hint:'예) 노은동 이사 후 스탠드 에어컨 이전설치'},
+  {id:'remove',name:'해체철거',sub:'철거 · 실외기 · 원상복구',hint:'예) 둔산동 상가 폐업, 천장형 에어컨 철거 및 원상복구'}];
 const catById=id=>CATS.find(c=>c.id===id);
 
 /* ---------- backend ---------- */
@@ -838,7 +852,7 @@ function route(token,scrollId){
   else if(token==='write'){ openEditor(null); }
   else if(token.startsWith('quote')){ view='quote'; svc=token.split('-')[1]||''; }
   else if(!VIEWS.includes(view)) view='home';
-  if(view!=='post'){ currentPost=null; document.title='에어컨탐정 | 대전·세종·충청권 에어컨 분해청소·수리·설치'; }
+  if(view!=='post'){ currentPost=null; document.title='에어컨탐정 | 대전·세종·충청권 에어컨 분해청소·수리·설치·철거'; }
   $$('[data-view]').forEach(v=>v.hidden=v.dataset.view!==view);
   $('.cta').hidden=['write','admin','quote'].includes(view);
   $('#fab').hidden=['write','admin'].includes(view);
