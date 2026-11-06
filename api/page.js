@@ -4,7 +4,7 @@
 import { T, db, supabaseReady } from './_lib.js';
 
 const SITE_NAME = '에어컨탐정';
-const CAT = { clean: '분해청소', repair: '수리', install: '설치' };
+const CAT = { clean: '분해청소', repair: '수리', install: '설치', remove: '해체철거' };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const oneLine = (s) => String(s || '').replace(/\s+/g, ' ').trim();
 const cut = (s, n) => { s = oneLine(s); return s.length > n ? s.slice(0, n - 1) + '…' : s; };
@@ -38,7 +38,7 @@ function articleHtml(p) {
 <h1>${esc(p.title)}</h1>
 ${p.cover ? `<img src="${esc(p.cover)}" alt="${esc(p.title)}" width="800" style="max-width:100%;height:auto">` : ''}
 ${body}
-<p>${SITE_NAME} · 대전·세종·충청권 에어컨 분해청소·수리·설치 · 문의 <a href="tel:01047483142">010-4748-3142</a></p>
+<p>${SITE_NAME} · 대전·세종·충청권 에어컨 분해청소·수리·설치·철거 · 문의 <a href="tel:01047483142">010-4748-3142</a></p>
 </article>`;
 }
 

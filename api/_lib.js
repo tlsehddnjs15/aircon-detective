@@ -7,7 +7,7 @@ const SB_URL = () => env('SUPABASE_URL').replace(/\/+$/, '');
 const SB_KEY = () => env('SUPABASE_SECRET_KEY') || env('SUPABASE_SERVICE_ROLE_KEY');
 export const BUCKET = 'media';
 
-export const SERVICE_IDS = ['clean', 'repair', 'install'];
+export const SERVICE_IDS = ['clean', 'repair', 'install', 'remove'];
 // 단정 오피스케어와 같은 Supabase를 쓰므로, 에어컨탐정 전용 테이블 이름을 따로 씁니다.
 export const T = { posts: 'ac_posts', quotes: 'ac_quotes' };
 export const UPLOAD_DIR = 'acposts';
