@@ -16,9 +16,10 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14120F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Cinzel:wght@500;700&display=swap">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"에어컨탐정","alternateName":["Aircon Detective","에어컨 탐정"],"url":"https://aircon-detective.vercel.app/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HVACBusiness","name":"에어컨탐정","telephone":"+82-10-4748-3142","areaServed":["대전","세종","충청"],"openingHours":"Mo-Su 00:00-23:59","address":{"@type":"PostalAddress","addressLocality":"대전 유성구","addressCountry":"KR"},"url":"https://aircon-detective.vercel.app/"}</script>
 <style>
@@ -60,10 +61,11 @@ button,input,select,textarea{font:inherit;color:inherit}
 .top{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:2px solid var(--ink)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.logo-mark{width:42px;height:42px;border:2px solid var(--red);display:flex;align-items:center;justify-content:center;flex:none}
+.logo-mark{width:46px;height:46px;display:block;flex:none}
+.logo-mark svg{display:block;width:100%;height:100%}
 .logo-txt{display:flex;flex-direction:column;line-height:1.15}
 .logo-txt b{font-family:var(--f-serif);font-weight:800;font-size:26px}
-.logo-txt small{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.logo-txt small{font-family:'Cinzel',serif;font-weight:500;font-size:11px;letter-spacing:.22em;color:#7A5E2A}
 .nav{display:flex;gap:4px 22px;font-size:15px}
 .nav a{color:var(--ink);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
 .nav a:hover,.nav a[aria-current="page"]{border-bottom-color:var(--red)}
@@ -271,8 +273,8 @@ footer a{color:var(--muted)}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#home" data-go="home" aria-label="에어컨탐정 홈">
-      <span class="logo-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9E2019" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></span>
-      <span class="logo-txt"><b>에어컨탐정</b><small>분해청소 · 수리 · 설치 · 철거</small></span>
+      <span class="logo-mark"><svg viewBox="0 0 150 150" aria-hidden="true"><circle cx="75" cy="75" r="74" fill="#14120F"/><circle cx="75" cy="75" r="64" fill="none" stroke="#C9A86A" stroke-width="3"/><circle cx="75" cy="75" r="57" fill="none" stroke="#C9A86A" stroke-width="1.4"/><text x="57" y="97" text-anchor="middle" font-family="Cinzel,serif" font-weight="700" font-size="62" fill="#C9A86A">A</text><text x="94" y="97" text-anchor="middle" font-family="Cinzel,serif" font-weight="500" font-size="62" fill="none" stroke="#C9A86A" stroke-width="3">D</text><path d="M46 112 H104" stroke="#C9A86A" stroke-width="2"/></svg></span>
+      <span class="logo-txt"><b>에어컨탐정</b><small>AIRCON DETECTIVE</small></span>
     </a>
     <nav class="nav" aria-label="주 메뉴">
       <a href="#service" data-go="home" data-scroll="service">서비스</a>
